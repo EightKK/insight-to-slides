@@ -22,6 +22,11 @@ fitz = load_pymupdf()
 from PIL import Image, ImageDraw  # noqa: E402
 
 
+def rect_area(rect):
+    """Area of a PyMuPDF Rect; Rect.get_area() is missing in some supported versions."""
+    return 0.0 if rect.is_empty else rect.width * rect.height
+
+
 def find_office():
     """Locate the LibreOffice CLI (soffice on Windows/macOS, often libreoffice on Linux)."""
     for candidate in (os.environ.get('SOFFICE'), 'soffice', 'libreoffice',
@@ -51,7 +56,7 @@ def low_contrast_vector_text(page, tolerance=.20):
     for item in page.get_drawings():
         rect,col=item['rect'],item.get('fill')
         if (col and rect.width>=24 and rect.height>=10 and
-                max(col)-min(col) >= .15 and rect.get_area() < .22 * page.rect.get_area()):
+                max(col)-min(col) >= .15 and rect_area(rect) < .22 * rect_area(page.rect)):
             fills.append((rect,tuple(float(x) for x in col)))
     warnings=[]
     for block in page.get_text('dict')['blocks']:
@@ -64,10 +69,10 @@ def low_contrast_vector_text(page, tolerance=.20):
                 ink=((rgb>>16 & 255)/255.,(rgb>>8 & 255)/255.,(rgb & 255)/255.)
                 for rect,col in fills:
                     overlap=box & rect
-                    if overlap.is_empty or overlap.get_area()/max(1,box.get_area())<.16:continue
+                    if overlap.is_empty or rect_area(overlap)/max(1,rect_area(box))<.16:continue
                     distance=math.sqrt(sum((a-b)**2 for a,b in zip(ink,col)))
                     if distance<=tolerance:
-                        warnings.append({'text':t[:46], 'overlap_fraction':round(overlap.get_area()/max(1,box.get_area()),2),
+                        warnings.append({'text':t[:46], 'overlap_fraction':round(rect_area(overlap)/max(1,rect_area(box)),2),
                                          'ink_fill_color_distance':round(distance,3)})
                         break
     return warnings
@@ -117,9 +122,9 @@ def render_file(path, out, dpi=150):
                 if a[:2] == b_item[:2]:
                     continue
                 overlap = a[3] & b_item[3]
-                if overlap.get_area() <= 2 or overlap.width <= 2 or overlap.height <= 2:
+                if rect_area(overlap) <= 2 or overlap.width <= 2 or overlap.height <= 2:
                     continue
-                portion = overlap.get_area() / max(1, min(a[3].get_area(), b_item[3].get_area()))
+                portion = rect_area(overlap) / max(1, min(rect_area(a[3]), rect_area(b_item[3])))
                 if portion > 0.28:
                     collisions.append({'texts':[a[2][:42],b_item[2][:42]],'overlap_fraction':round(portion,3)})
         low_contrast=low_contrast_vector_text(p)
