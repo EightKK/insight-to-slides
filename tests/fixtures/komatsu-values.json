@@ -1,0 +1,69 @@
+{
+  "period": "2026-04-01 to 2026-09-30",
+  "currency": "JPY 100 million",
+  "H1": {
+    "sales_2025": 18915.87,
+    "sales_2026": 21586.39,
+    "operating_2025": 2770.61,
+    "operating_2026": 2866.25,
+    "net_2025": 1757.01,
+    "net_2026": 1919.16
+  },
+  "Q2": {
+    "sales_2025": 9820.63,
+    "sales_2026": 11154.96,
+    "operating_2025": 1366.7,
+    "operating_2026": 1350.72
+  },
+  "construction_H1": {
+    "sales_2025": 17421.95,
+    "sales_2026": 19995.63,
+    "profit_2025": 2419.63,
+    "profit_2026": 2444.72
+  },
+  "construction_Q2_external": {
+    "sales_2025": 8950,
+    "sales_2026": 10288,
+    "sales_fx_neutral_increase": 526,
+    "sales_reported_growth_pct": 14.9,
+    "sales_constant_currency_growth_pct": 5.9
+  },
+  "general_Q2": {
+    "sales_2025": 4322,
+    "sales_2026": 5268,
+    "growth_pct": 21.9,
+    "fx_neutral_growth_pct": 13.7
+  },
+  "mining_Q2": {
+    "sales_2025": 4627,
+    "sales_2026": 5020,
+    "growth_pct": 8.5,
+    "fx_neutral_growth_pct": -1.4
+  },
+  "regions_Q2": {
+    "north_america": 483,
+    "latin_america": 565,
+    "europe": 93,
+    "africa": 194,
+    "middle_east": -60,
+    "oceania": -31,
+    "asia": 36,
+    "china": -5,
+    "cis": 36,
+    "japan": 27,
+    "total_delta_reported": 1338
+  },
+  "forecast": {
+    "sales_2025": 41328,
+    "sales_july": 43020,
+    "sales_oct": 44500,
+    "operating_2025": 5673,
+    "operating_july": 5550,
+    "operating_oct": 5850
+  },
+  "urls": {
+    "earnings": "https://www.komatsu.jp/ja/newsroom/2026/20261029_1",
+    "financial_pdf": "https://www.komatsu.jp/ja/-/media/home/ir/library/financial/ja/2703q2_j.pdf",
+    "presentation_pdf": "https://www.komatsu.jp/ja/-/media/home/ir/library/results/2026/jp_fy262qpresentation.pdf"
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0.0",
+  "audience": "経営層および事業・市場分析を行う意思決定者",
+  "governing_question": "ASMLのAI需要は長期的な業績拡大にどこまで転換可能か。足元の高利益率と高FCFを将来の基準に使えるか。",
+  "current_answer": "需要の強さと長期化は顧客側の投資情報も含めて支持されるが、装置供給能力と高採算アップグレード構成、前受金の時点差があるため、2026年Q3の利益率とFCFをそのまま将来へ外挿しない。",
+  "confidence": "medium",
+  "evidence": [
+    {
+      "id": "E1",
+      "source": "https://www.sec.gov/Archives/edgar/data/937966/000162828026065813/a2026_10x14xpresentation.htm",
+      "summary": "ASML 2026年Q3 IRプレゼン（財務数値）"
+    },
+    {
+      "id": "E2",
+      "source": "https://www.investor.asml.com/static-files/40c56a6b-1460-4f69-9340-6a869560d24b",
+      "summary": "ASML 2026年Q3 経営陣説明原稿（アップグレード・前受金・能力不足）"
+    },
+    {
+      "id": "E3",
+      "source": "https://www.investor.asml.com/news-releases/news-release-details/q3-2025-financial-results",
+      "summary": "ASML 2025年Q3公式決算（前年同期比較）"
+    },
+    {
+      "id": "E4",
+      "source": "https://pr.tsmc.com/english/news/3346",
+      "summary": "TSMC 2026年Q3公式決算（需要の顧客側確認）"
+    },
+    {
+      "id": "E5",
+      "source": "https://investor.tsmc.com/japanese/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+      "summary": "TSMC Q3決算説明会：2026設備投資計画"
+    },
+    {
+      "id": "E6",
+      "source": "https://news.samsung.com/global/samsung-electronics-and-asml-expand-strategic-collaboration-for-next-generation-semiconductor-manufacturing",
+      "summary": "Samsung/ASML High NA EUVの計画"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "2026年Q3売上高は116.62億€、前年同期比約55.2%増",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1",
+        "E3"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "supporting"
+    },
+    {
+      "id": "C2",
+      "text": "粗利益率はQ2の54.0%からQ3に57.5%へ上昇",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "supporting"
+    },
+    {
+      "id": "C3",
+      "text": "既存装置管理の売上構成比はQ2の29.6%からQ3に28.2%へ低下",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "supporting"
+    },
+    {
+      "id": "C4",
+      "text": "高採算のアップグレード販売がQ3の粗利益率を押し上げたとの経営陣説明",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E2"
+      ],
+      "causal_basis": "management_explanation",
+      "prominence": "supporting"
+    },
+    {
+      "id": "C5",
+      "text": "Q3純利益49.60億€にMistral AI出資の評価益約5億€を含む",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "supporting"
+    },
+    {
+      "id": "C6",
+      "text": "Q3 FCF113.51億€には顧客の前受金が大きく寄与との説明",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ],
+      "causal_basis": "management_explanation",
+      "prominence": "supporting"
+    },
+    {
+      "id": "C7",
+      "text": "経営陣は2027〜28年の現行供給計画が顧客需要を満たさないと見込む",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E2"
+      ],
+      "causal_basis": "management_explanation",
+      "prominence": "key"
+    },
+    {
+      "id": "C8",
+      "text": "TSMCはQ3売上+50.9%、設備投資計画600〜640億$を示す",
+      "kind": "fact",
+      "evidence_ids": [
+        "E4",
+        "E5"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "supporting"
+    },
+    {
+      "id": "C9",
+      "text": "需要の強さは複数資料で確認できる一方、Q3の利益率とFCFを直線外挿するのは不適切",
+      "kind": "recommendation",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C10",
+      "text": "SamsungはHigh NA EUVを2028年にDRAM量産へ導入する計画を発表",
+      "kind": "fact",
+      "evidence_ids": [
+        "E6"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "supporting"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "governing": true,
+      "text": "強いAI需要はASMLの長期利益成長へ継続的に転換できるか",
+      "status": "conditional",
+      "answer": "需要拡大は支持されるが、2027〜28年の供給制約と収益ミックスで実現時期・利益率は変わる",
+      "supporting_claim_ids": [
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "limitation": "受注残総額や年度別に確定した装置納入を資料だけでは定量化できない"
+    },
+    {
+      "id": "Q2",
+      "text": "2026年Q3の高い粗利益率は構造的な改善か",
+      "status": "conditional",
+      "answer": "高採算アップグレードによる寄与が確認できるため、四半期利益率を持続的な水準と見なす根拠は不足",
+      "supporting_claim_ids": [
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "limitation": "売上増加・機種ミックス・価格・アップグレードの効果を厳密に分解できていない"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "AI関連投資が長期にわたり装置需要を押し上げる",
+      "supporting_evidence_ids": [
+        "E2",
+        "E4",
+        "E5",
+        "E6"
+      ],
+      "counter_evidence_ids": [
+        "E1"
+      ],
+      "falsifier": "顧客設備投資の下方修正、装置納入の延期・キャンセルが継続する",
+      "confidence": "medium"
+    },
+    {
+      "id": "H2",
+      "text": "Q3の高利益率とキャッシュフローは一時的な構成・資金移動の効果を大きく含む",
+      "supporting_evidence_ids": [
+        "E1",
+        "E2"
+      ],
+      "counter_evidence_ids": [
+        "E4"
+      ],
+      "falsifier": "アップグレード構成正常化後も高い利益率・FCFが複数四半期継続する",
+      "confidence": "medium"
+    }
+  ],
+  "decision": {
+    "question": "2027〜28年のASMLを評価する際、Q3利益率・現金創出を基準に置くべきか",
+    "working_assessment": "需要の強さは前提に置く一方、四半期の高利益率・前受金を持続的な業績にみなさず別ケースで評価する",
+    "options": [
+      {
+        "name": "A：需要主導の中期成長を重視",
+        "merit": "顧客の長期投資の継続と増産達成による売上成長を評価する",
+        "tradeoff": "供給制約や利益率構成の変動を過小評価する恐れがある"
+      },
+      {
+        "name": "B：供給と利益率を慎重に評価",
+        "merit": "供給能力、アップグレード構成、キャッシュタイミングを分解できる",
+        "tradeoff": "構造的な成長を保守的に見積もりすぎる恐れがある"
+      }
+    ],
+    "reversal_conditions": [
+      "2027〜28年の増産実績・納入リードタイムが計画を大きく下回る",
+      "顧客の投資計画・受注の確度に重大な変更が生じる",
+      "高採算アップグレード比率正常化後も高利益率が継続する"
+    ]
+  },
+  "slides": [
+    {
+      "id": "S01",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C7",
+        "C9"
+      ],
+      "purpose": "overall answer"
+    },
+    {
+      "id": "S02",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C6",
+        "C7"
+      ],
+      "purpose": "executive"
+    },
+    {
+      "id": "S03",
+      "claim_ids": [
+        "C1",
+        "C2"
+      ],
+      "purpose": "results"
+    },
+    {
+      "id": "S04",
+      "claim_ids": [
+        "C1"
+      ],
+      "purpose": "growth contributions"
+    },
+    {
+      "id": "S05",
+      "claim_ids": [
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "purpose": "margin quality"
+    },
+    {
+      "id": "S06",
+      "claim_ids": [
+        "C5"
+      ],
+      "purpose": "earnings quality"
+    },
+    {
+      "id": "S07",
+      "claim_ids": [
+        "C6"
+      ],
+      "purpose": "cash quality"
+    },
+    {
+      "id": "S08",
+      "claim_ids": [
+        "C7"
+      ],
+      "purpose": "capacity constraints"
+    },
+    {
+      "id": "S09",
+      "claim_ids": [
+        "C8",
+        "C10"
+      ],
+      "purpose": "external corroboration"
+    },
+    {
+      "id": "S10",
+      "claim_ids": [
+        "C7"
+      ],
+      "purpose": "guidance"
+    },
+    {
+      "id": "S11",
+      "claim_ids": [
+        "C9"
+      ],
+      "purpose": "decision"
+    },
+    {
+      "id": "S12",
+      "claim_ids": [],
+      "purpose": "sources"
+    }
+  ]
+}

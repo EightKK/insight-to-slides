@@ -1,0 +1,410 @@
+{
+  "schema_version": "1.0.0",
+  "document": {
+    "title": "トヨタ 2027年3月期第1四半期 業績分析",
+    "audience": "経営会議・IR分析担当者",
+    "intent": "decide",
+    "primary_question": "増収と営業減益の乖離をどう理解し、次回決算では何を追うべきか",
+    "medium": "projection",
+    "decision_owner": "資料を検討する経営会議の責任者",
+    "output_language": "ja",
+    "limitations": [
+      "公開決算資料に基づく説明資料であり投資助言ではない。",
+      "人間による2秒理解テストは未実施。",
+      "一部の計算結果は四捨五入した数字を使用。"
+    ]
+  },
+  "evidence": [
+    {
+      "id": "e_sales",
+      "statement": "2026年4～6月の連結売上収益は前年同期の12兆2,533億円から13兆5,254億円へ増加",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary p.1",
+      "confidence": "high",
+      "period": "2026年4～6月／前年同期"
+    },
+    {
+      "id": "e_op",
+      "statement": "連結営業利益は前年同期1兆1,661億円から当期1兆635億円に減少",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary p.1",
+      "confidence": "high",
+      "period": "2026年4～6月／前年同期"
+    },
+    {
+      "id": "e_margin",
+      "statement": "営業利益率は約9.5%から約7.9%へ低下",
+      "kind": "calculation",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary p.1",
+      "confidence": "high",
+      "formula": "100*(1063.5/13525.4-1166.1/12253.3)",
+      "input_refs": [
+        "e_sales",
+        "e_op"
+      ],
+      "period": "2026年4～6月／前年同期",
+      "caveats": [
+        "金額は表示単位で丸めたため精度に限界がある。"
+      ]
+    },
+    {
+      "id": "e_volume",
+      "statement": "連結販売台数は241.2万台から239.5万台に減少",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary p.2",
+      "confidence": "high",
+      "period": "2026年4～6月／前年同期"
+    },
+    {
+      "id": "e_drivers",
+      "statement": "営業利益変動要因は販売努力+700億円、為替+3,450億円、原価低減-850億円、経費-1,900億円、その他-2,426億円",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary p.2",
+      "confidence": "high",
+      "period": "2026年4～6月／前年同期",
+      "caveats": [
+        "その他には複数の要因が含まれる。"
+      ]
+    },
+    {
+      "id": "e_segment",
+      "statement": "自動車事業の営業利益は約21.0%減、金融事業は約24.0%増",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary p.3",
+      "confidence": "high",
+      "period": "2026年4～6月／前年同期",
+      "caveats": [
+        "異なるセグメントの利益を単純合計して連結利益とはしない。"
+      ]
+    },
+    {
+      "id": "e_profit_tiers",
+      "statement": "税引前利益は56.8%増、親会社帰属利益は75.6%増",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary p.1",
+      "confidence": "high",
+      "period": "2026年4～6月／前年同期"
+    },
+    {
+      "id": "e_outlook",
+      "statement": "通期会社予想は売上収益54兆円・営業利益3.4兆円",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary, Forecast p.1",
+      "confidence": "high",
+      "period": "2026年4月～2027年3月",
+      "caveats": [
+        "予想値であり実績ではない。"
+      ]
+    },
+    {
+      "id": "e_scope",
+      "statement": "Hinoグループ等が当四半期に連結範囲から除外された",
+      "kind": "source_fact",
+      "source": "https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm",
+      "locator": "Financial Summary, Notes p.1",
+      "confidence": "high",
+      "period": "2026年4～6月"
+    }
+  ],
+  "slides": [
+    {
+      "id": "S01",
+      "role": "summary",
+      "headline": "売上は10.4%増でも、営業利益は8.8%減",
+      "claim_type": "interpretation",
+      "takeaway": "売上は10.4%増でも、営業利益は8.8%減",
+      "evidence_refs": [
+        "e_sales",
+        "e_op"
+      ],
+      "visual": {
+        "pattern": "contrast_kpi",
+        "pattern_id": "contrast_kpi",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "10.4%",
+        "8.8%"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ]
+    },
+    {
+      "id": "S02",
+      "role": "finding",
+      "headline": "増収でも営業利益率は9.5%から7.9%へ低下",
+      "claim_type": "fact",
+      "takeaway": "増収でも営業利益率は9.5%から7.9%へ低下",
+      "evidence_refs": [
+        "e_sales",
+        "e_op",
+        "e_margin"
+      ],
+      "visual": {
+        "pattern": "margin_dilution",
+        "pattern_id": "margin_dilution",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "9.5%",
+        "7.9%",
+        "-1.7pt"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ]
+    },
+    {
+      "id": "S03",
+      "role": "finding",
+      "headline": "販売台数は0.7%減――売上増を数量成長とは呼べない",
+      "claim_type": "interpretation",
+      "takeaway": "販売台数は0.7%減――売上増を数量成長とは呼べない",
+      "evidence_refs": [
+        "e_sales",
+        "e_volume",
+        "e_scope"
+      ],
+      "visual": {
+        "pattern": "volume_sales_divergence",
+        "pattern_id": "volume_sales_divergence",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "-0.7%",
+        "+10.4%"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ]
+    },
+    {
+      "id": "S04",
+      "role": "finding",
+      "headline": "為替+3,450億円でも営業利益は1,026億円減",
+      "claim_type": "fact",
+      "takeaway": "為替+3,450億円でも営業利益は1,026億円減",
+      "evidence_refs": [
+        "e_op",
+        "e_drivers"
+      ],
+      "visual": {
+        "pattern": "profit_driver_waterfall",
+        "pattern_id": "profit_driver_waterfall",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "+3,450",
+        "-1,026",
+        "-2,426"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ]
+    },
+    {
+      "id": "S05",
+      "role": "finding",
+      "headline": "自動車事業は21%減益、金融事業は24%増益",
+      "claim_type": "fact",
+      "takeaway": "自動車事業は21%減益、金融事業は24%増益",
+      "evidence_refs": [
+        "e_segment",
+        "e_op"
+      ],
+      "visual": {
+        "pattern": "segment_profit_divergence",
+        "pattern_id": "segment_profit_divergence",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "-21.0%",
+        "+24.0%"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ]
+    },
+    {
+      "id": "S06",
+      "role": "finding",
+      "headline": "営業減益と最終増益は両立する――利益段階を分けて読む",
+      "claim_type": "interpretation",
+      "takeaway": "営業減益と最終増益は両立する――利益段階を分けて読む",
+      "evidence_refs": [
+        "e_op",
+        "e_profit_tiers"
+      ],
+      "visual": {
+        "pattern": "profit_tier_divergence",
+        "pattern_id": "profit_tier_divergence",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "-8.8%",
+        "+56.8%",
+        "+75.6%"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ]
+    },
+    {
+      "id": "S07",
+      "role": "finding",
+      "headline": "通期は増収6.5%・営業減益9.7%を予想",
+      "claim_type": "fact",
+      "takeaway": "通期は増収6.5%・営業減益9.7%を予想",
+      "evidence_refs": [
+        "e_outlook"
+      ],
+      "visual": {
+        "pattern": "outlook_fact_separation",
+        "pattern_id": "outlook_fact_separation",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "+6.5%",
+        "-9.7%",
+        "会社予想"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ]
+    },
+    {
+      "id": "S08",
+      "role": "decision",
+      "headline": "次回決算ではどの「利益の質」を優先して確認するか",
+      "claim_type": "recommendation",
+      "takeaway": "次回決算ではどの「利益の質」を優先して確認するか",
+      "evidence_refs": [
+        "e_op",
+        "e_segment",
+        "e_drivers"
+      ],
+      "visual": {
+        "pattern": "decision_option_matrix",
+        "pattern_id": "decision_option_matrix",
+        "visual_focus": "主張を読んだ直後に増減の方向と比較対象が理解できる構成",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "A",
+        "B",
+        "C"
+      ],
+      "uncertainties": [
+        "選択肢の妥当性には追加データが必要。"
+      ],
+      "discussion": {
+        "question": "次回の決算で何を最優先のモニタリング指標とするか",
+        "options": [
+          "為替を除く営業利益の変化",
+          "自動車事業の利益率",
+          "営業キャッシュフローと投資"
+        ],
+        "next_action": "必要な追加データと担当者を決める。",
+        "missing_information": [
+          "為替除外の利益増減",
+          "地域別原価・製品ミックス",
+          "営業CFと金融事業の切り分け"
+        ]
+      }
+    },
+    {
+      "id": "S09",
+      "role": "reference",
+      "headline": "出典・注記",
+      "claim_type": "fact",
+      "takeaway": "出典・注記",
+      "evidence_refs": [
+        "e_scope",
+        "e_outlook",
+        "e_segment"
+      ],
+      "visual": {
+        "pattern": "evidence_ladder",
+        "pattern_id": "evidence_ladder",
+        "visual_focus": "出典、公表日、対象期間、利益指標、連結範囲、会社予想に関する注記を一覧で確認できる表",
+        "design_notes": "実績、予想、会社公表の要因分解、分析者の解釈を視覚と注記で分離する。",
+        "expected_reading_order": [
+          "主張",
+          "比較・要因",
+          "制約・出典"
+        ]
+      },
+      "audit_tokens": [
+        "2026年8月4日",
+        "除外"
+      ],
+      "uncertainties": [
+        "比較対象の定義と連結範囲に注意する。"
+      ],
+      "reference_content_types": [
+        "sources",
+        "definitions",
+        "scope",
+        "caveats",
+        "forecast",
+        "comparison"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Script outputs when run inside the repo
+qa/
+*-report.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Operational improvement decision evidence contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_classification",
+    "starting_wip_units",
+    "ending_wip_units",
+    "period_workdays",
+    "average_release_units_per_day",
+    "average_completion_units_per_day",
+    "average_customer_demand_units_per_day",
+    "stages",
+    "constraint_capacity_model",
+    "scenarios",
+    "days_for_scenario",
+    "pilot",
+    "assumptions",
+    "benefit_basis_note"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_classification": {
+      "enum": [
+        "synthetic_fictional",
+        "observed_company",
+        "aggregated_anonymized"
+      ]
+    },
+    "starting_wip_units": {
+      "type": "number",
+      "minimum": 0
+    },
+    "ending_wip_units": {
+      "type": "number",
+      "minimum": 0
+    },
+    "period_workdays": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "days_for_scenario": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "average_release_units_per_day": {
+      "type": "number",
+      "minimum": 0
+    },
+    "average_completion_units_per_day": {
+      "type": "number",
+      "minimum": 0
+    },
+    "average_customer_demand_units_per_day": {
+      "type": "number",
+      "minimum": 0
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "effective_capacity_per_day",
+          "wip_units",
+          "aging"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "effective_capacity_per_day": {
+            "type": "number",
+            "minimum": 0
+          },
+          "wip_units": {
+            "type": "number",
+            "minimum": 0
+          },
+          "aging": {
+            "type": "object",
+            "required": [
+              "0-2",
+              "3-5",
+              "6+"
+            ],
+            "properties": {
+              "0-2": {
+                "type": "number",
+                "minimum": 0
+              },
+              "3-5": {
+                "type": "number",
+                "minimum": 0
+              },
+              "6+": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "constraint_capacity_model": {
+      "type": "object",
+      "required": [
+        "available_minutes_per_day",
+        "theoretical_units_per_day",
+        "baseline_lost_minutes_per_day",
+        "pilot_minutes_recovered_per_day",
+        "proposed_effective_capacity_rounded_per_day",
+        "baseline_realized_output_units_per_day"
+      ],
+      "properties": {
+        "available_minutes_per_day": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "theoretical_units_per_day": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "baseline_lost_minutes_per_day": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "pilot_minutes_recovered_per_day": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "proposed_effective_capacity_rounded_per_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "baseline_realized_output_units_per_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "constraint_stage_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_tolerance_units_per_day": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1.0
+        }
+      },
+      "additionalProperties": true
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "release_per_day",
+          "completed_per_day",
+          "customer_demand_per_day",
+          "capacity_per_day"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "release_per_day": {
+            "type": "number",
+            "minimum": 0
+          },
+          "completed_per_day": {
+            "type": "number",
+            "minimum": 0
+          },
+          "customer_demand_per_day": {
+            "type": "number",
+            "minimum": 0
+          },
+          "capacity_per_day": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "pilot": {
+      "type": "object",
+      "required": [
+        "release_per_day",
+        "completion_target_per_day",
+        "post_pilot_release_per_day",
+        "maximum_assumed_capacity_per_day",
+        "target_end_wip_units",
+        "average_wip_valuation_yen_per_unit",
+        "recommended_scenario_id"
+      ],
+      "properties": {
+        "recommended_scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "release_per_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "completion_target_per_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "post_pilot_release_per_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "maximum_assumed_capacity_per_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target_end_wip_units": {
+          "type": "number",
+          "minimum": 0
+        },
+        "average_wip_valuation_yen_per_unit": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "benefit_basis_note": {
+      "type": "string",
+      "minLength": 10,
+      "description": "States how WIP book-value reduction differs from realized cash / working-capital release."
+    }
+  },
+  "additionalProperties": true
+}

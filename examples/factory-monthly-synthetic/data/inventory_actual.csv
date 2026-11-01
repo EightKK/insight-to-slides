@@ -1,0 +1,5 @@
+﻿period,sku,fg_open_units,produced_good_units,shipped_units,fg_close_units,fg_unit_manufacturing_cost_kJPY,fg_close_value_mJPY,wip_open_units,wip_close_units
+2026-10,AX-100,150,900,980,70,29,2.03,250,220
+2026-10,BX-200,200,1900,1650,450,24,10.8,170,160
+2026-10,CX-300,400,700,500,600,47,28.2,200,270
+2026-10,DX-400,100,290,320,70,52,3.64,110,100

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence Ledger",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sources",
+    "observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "publisher",
+          "title",
+          "locator",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 4
+          },
+          "type": {
+            "enum": [
+              "official_filing",
+              "official_presentation",
+              "official_qa",
+              "peer_filing",
+              "industry_stat",
+              "independent_analysis",
+              "user_document"
+            ]
+          },
+          "accessed_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source_id",
+          "statement",
+          "status",
+          "scope",
+          "period",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "verified",
+              "estimated",
+              "unverified",
+              "unavailable"
+            ]
+          },
+          "scope": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "actual",
+              "forecast",
+              "management_commentary",
+              "derived",
+              "qualitative"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "caveat": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

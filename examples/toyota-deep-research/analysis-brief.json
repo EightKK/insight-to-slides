@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "primary_question": "Is Toyota FY2027 Q1 operating margin weakness temporary or structural, and which leading indicators merit monitoring?",
+  "language": "ja",
+  "hypotheses": [
+    {
+      "id": "H01",
+      "hypothesis": "最終増益の一部は営業外の有価証券売却益や為替差益により説明され、営業収益力改善とは異なる",
+      "evidence_ids": [
+        "E03",
+        "E05",
+        "E07",
+        "E08"
+      ],
+      "counterevidence_ids": [
+        "E13"
+      ],
+      "confidence": "high",
+      "falsifier": "特殊利益を除いても最終利益の増加が同規模",
+      "status": "supported",
+      "limitation": "税・持分法・非支配持分を含む正確な最終利益寄与率は未分解"
+    },
+    {
+      "id": "H02",
+      "hypothesis": "円安による寄与が、営業利益のマイナス変動を部分的に相殺",
+      "evidence_ids": [
+        "E09",
+        "E10"
+      ],
+      "counterevidence_ids": [
+        "E13"
+      ],
+      "confidence": "high",
+      "falsifier": "為替寄与が非プラスと改訂される",
+      "status": "supported",
+      "limitation": "−4,476億円という単純控除額は純粋な実力値ではない"
+    },
+    {
+      "id": "H03",
+      "hypothesis": "HEV構成比の上昇が営業利益改善に直結している",
+      "evidence_ids": [
+        "E13",
+        "E14",
+        "E24"
+      ],
+      "counterevidence_ids": [
+        "E09",
+        "E12"
+      ],
+      "confidence": "undetermined",
+      "falsifier": "価格・地域・販売インセンティブを揃えたHEV粗利益寄与が改善しない",
+      "status": "unresolved",
+      "limitation": "車種別利益や純粋な商品ミックス収益は未公表"
+    },
+    {
+      "id": "H04",
+      "hypothesis": "原材料・関税の外部要因は業界共通だが、競争力悪化を単独で結論できない",
+      "evidence_ids": [
+        "E17",
+        "E18",
+        "E19"
+      ],
+      "counterevidence_ids": [
+        "E20"
+      ],
+      "confidence": "medium",
+      "falsifier": "同一条件の車種別営業利益率でトヨタのみ長期悪化",
+      "status": "mixed",
+      "limitation": "ホンダ連結には二輪、金融が入り、SUBARUと地域・為替が異なる"
+    }
+  ],
+  "conclusions": [
+    {
+      "id": "C01",
+      "claim": "2026年4〜6月は売上収益増の一方、営業利益率が9.5%から7.9%へ低下",
+      "evidence_ids": [
+        "E01",
+        "E02",
+        "E03",
+        "E04"
+      ],
+      "confidence": "high",
+      "relevance": "収益力変化の出発点"
+    },
+    {
+      "id": "C02",
+      "claim": "営業減益1,026億円は為替プラス3,450億円とそれ以外の大きな変動要素が相殺した結果",
+      "evidence_ids": [
+        "E09"
+      ],
+      "confidence": "high",
+      "relevance": "営業段階の要因分解"
+    },
+    {
+      "id": "C03",
+      "claim": "最終利益増加を本業の収益性改善と同一視できない",
+      "evidence_ids": [
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "confidence": "high",
+      "relevance": "経営層の誤読防止",
+      "caveat": "売却益等の税引後の寄与率は断定しない"
+    },
+    {
+      "id": "C04",
+      "claim": "HEVの台数・電動化比率は改善するも、HEV単独の利益寄与は未検証",
+      "evidence_ids": [
+        "E12",
+        "E13",
+        "E14",
+        "E24"
+      ],
+      "confidence": "medium",
+      "relevance": "需要と収益力を切り分け"
+    },
+    {
+      "id": "C05",
+      "claim": "通期上方修正は為替前提の変更に大きく依存し、原材料費と中東物流が残余リスク",
+      "evidence_ids": [
+        "E21",
+        "E22",
+        "E17",
+        "E25"
+      ],
+      "confidence": "high",
+      "relevance": "次回決算の監視指標"
+    }
+  ]
+}

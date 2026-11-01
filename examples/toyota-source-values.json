@@ -1,0 +1,21 @@
+{
+  "company": "Toyota Motor Corporation",
+  "fiscal_period": "FY2027 Q1 (2026-04-01 to 2026-06-30)",
+  "published": "2026-08-04",
+  "data_units": {"money": "JPY billions", "volume": "thousand vehicles"},
+  "sources": [
+    {"id":"S1", "title":"Toyota FY2027 1Q Financial Summary (SEC filed copy)","url":"https://www.sec.gov/Archives/edgar/data/1094517/000119312526331392/d258414dex991.htm","sections":"Financial Summary pp. 1-4"},
+    {"id":"S2", "title":"Toyota Investor Relations: FY2027 1Q Financial Results","url":"https://global.toyota/en/ir/financial-results/","sections":"FY2027 1Q, August 4 2026"}
+  ],
+  "sales_prev":12253.3,"sales_current":13525.4,
+  "op_prev":1166.1,"op_current":1063.5,
+  "owner_profit_prev":841.3,"owner_profit_current":1477.0,
+  "pretax_prev":1252.2,"pretax_current":1963.9,
+  "vehicles_prev":2412,"vehicles_current":2395,
+  "automotive_op_prev":911.3,"automotive_op_current":719.9,
+  "finance_op_prev":222.2,"finance_op_current":275.6,
+  "factors":{"marketing":70.0,"fx":345.0,"cost_reduction":-85.0,"expenses":-190.0,"other":-242.6},
+  "forecast_sales":54000.0,"forecast_sales_yoy":6.5,
+  "forecast_op":3400.0,"forecast_op_yoy":-9.7,
+  "notes":["Segment operating profits do not mechanically sum to consolidated operating income due to different segment scopes and eliminations.","Hino Motors and its subsidiaries were excluded from consolidated group in the current quarter; scope comparisons require care.","Other is the company's own aggregated factor, not a verified single causal source.","FY2027 numbers and outlook refer to the fiscal year ending March 2027. Actuals are the quarter ended June 2026."]
+}

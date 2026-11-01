@@ -1,0 +1,480 @@
+{
+  "schema_version": "1.0.0",
+  "document": {
+    "title": "コマツ 2027年3月期上期 業績分析",
+    "audience": "経営会議・分析担当者のための実践教材",
+    "intent": "explore",
+    "primary_question": "コマツの増収と採算低下をどう解釈し、何を継続監視するか？",
+    "medium": "projection",
+    "output_language": "ja",
+    "limitations": [
+      "投資助言ではない。",
+      "説明資料と決算短信に記載された情報が主な分析対象。",
+      "人間による2秒理解テストは未実施。"
+    ]
+  },
+  "evidence": [
+    {
+      "id": "e_h1_sales",
+      "statement": "上期売上高は前年1,891,587百万円から2,158,639百万円に増加",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/financial/ja/2703q2_j.pdf",
+      "locator": "p.1",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_h1_op",
+      "statement": "上期営業利益は前年277,061百万円から286,625百万円に増加",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/financial/ja/2703q2_j.pdf",
+      "locator": "p.1",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_h1_margin",
+      "statement": "売上高営業利益率は13.3％、前年より1.3ポイント低下",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/newsroom/2026/20261029_1",
+      "locator": "概要1",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_q2",
+      "statement": "7〜9月の売上高成長率13.6％、営業利益成長率マイナス1.2％",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/results/2026/jp_fy262qpresentation.pdf",
+      "locator": "p.4",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_q1",
+      "statement": "4〜6月の売上高成長率14.7％、営業利益成長率8.0％",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/newsroom/2026/20260729",
+      "locator": "概要1",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_segment",
+      "statement": "建設機械・車両の上期売上高は1,999,563百万円、セグメント利益は244,472百万円",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/financial/ja/2703q2_j.pdf",
+      "locator": "p.5",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_general",
+      "statement": "一般建機の7〜9月の為替除外売上高伸び率は13.7％",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/results/2026/jp_fy262qpresentation.pdf",
+      "locator": "p.8",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_mining",
+      "statement": "鉱山機械の7〜9月の為替除外売上高伸び率はマイナス1.4％",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/results/2026/jp_fy262qpresentation.pdf",
+      "locator": "p.7",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_region",
+      "statement": "7〜9月の建機外部売上増収は1,338億円、北米＋483億円、中南米＋565億円",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/results/2026/jp_fy262qpresentation.pdf",
+      "locator": "p.6",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_fx",
+      "statement": "7〜9月の建機外部売上増収率は14.9％、為替除外では5.9％",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/results/2026/jp_fy262qpresentation.pdf",
+      "locator": "p.6",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_cost",
+      "statement": "会社は円安・価格改善・物量増による増収とコスト増の利益圧迫を説明",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/financial/ja/2703q2_j.pdf",
+      "locator": "p.5",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_guidance",
+      "statement": "通期予想を売上44,500億円、営業利益5,850億円へ上方修正",
+      "kind": "source_fact",
+      "source": "https://www.komatsu.jp/ja/-/media/home/ir/library/results/2026/jp_fy262qpresentation.pdf",
+      "locator": "p.19",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期"
+    },
+    {
+      "id": "e_us_share",
+      "statement": "7〜9月の建機増収に占める北米・中南米の寄与率は78.3％",
+      "kind": "calculation",
+      "source": "analyst_calculations.json",
+      "locator": "usa_growth_contribution",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期",
+      "formula": "(north_america + latin_america)/total_delta*100",
+      "input_refs": [
+        "e_region"
+      ]
+    },
+    {
+      "id": "e_h2_margin",
+      "statement": "通期予想から上期実績を差し引くと、下期営業利益率は約13.0％",
+      "kind": "calculation",
+      "source": "analyst_calculations.json",
+      "locator": "h2_implied_margin",
+      "confidence": "high",
+      "period": "2026年4〜9月または明記した四半期",
+      "formula": "(operating_forecast - operating_actual_h1)/(sales_forecast - sales_actual_h1)*100",
+      "input_refs": [
+        "e_guidance",
+        "e_h1_sales",
+        "e_h1_op"
+      ]
+    },
+    {
+      "id": "e_evaluation",
+      "statement": "需要・為替・利益率を分けて追跡することが分析に有効という提案",
+      "kind": "hypothesis",
+      "source": "analyst_assessment",
+      "locator": "discussion",
+      "confidence": "medium",
+      "period": "2026年4〜9月または明記した四半期"
+    }
+  ],
+  "slides": [
+    {
+      "id": "S01",
+      "role": "summary",
+      "headline": "売上が伸びても、利益率は下がった。",
+      "claim_type": "interpretation",
+      "takeaway": "売上が伸びても、利益率は下がった。",
+      "evidence_refs": [
+        "e_h1_sales",
+        "e_h1_margin"
+      ],
+      "visual": {
+        "pattern": "contrast_kpi",
+        "pattern_id": "contrast_kpi",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "+14.1%",
+        "-1.3pt"
+      ],
+      "uncertainties": [
+        "他の原因や代替解釈を排除できない。"
+      ]
+    },
+    {
+      "id": "S02",
+      "role": "finding",
+      "headline": "売上は＋14.1%、営業利益は＋3.5%にとどまる",
+      "claim_type": "fact",
+      "takeaway": "売上は＋14.1%、営業利益は＋3.5%にとどまる",
+      "evidence_refs": [
+        "e_h1_sales",
+        "e_h1_op",
+        "e_h1_margin"
+      ],
+      "visual": {
+        "pattern": "contrast_kpi",
+        "pattern_id": "contrast_kpi",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "14.1%",
+        "3.5%",
+        "13.3%"
+      ]
+    },
+    {
+      "id": "S03",
+      "role": "comparison",
+      "headline": "7〜9月は13.6%増収でも営業利益が1.2%減少",
+      "claim_type": "fact",
+      "takeaway": "7〜9月は13.6%増収でも営業利益が1.2%減少",
+      "evidence_refs": [
+        "e_q1",
+        "e_q2"
+      ],
+      "visual": {
+        "pattern": "trend_small_multiples",
+        "pattern_id": "trend_small_multiples",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "13.6%",
+        "-1.2%"
+      ]
+    },
+    {
+      "id": "S04",
+      "role": "comparison",
+      "headline": "建設機械・車両は14.8%増収に対して利益1.0%増",
+      "claim_type": "fact",
+      "takeaway": "建設機械・車両は14.8%増収に対して利益1.0%増",
+      "evidence_refs": [
+        "e_segment"
+      ],
+      "visual": {
+        "pattern": "mix_margin_gap",
+        "pattern_id": "mix_margin_gap",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "14.8%",
+        "1.0%",
+        "12.2%"
+      ]
+    },
+    {
+      "id": "S05",
+      "role": "comparison",
+      "headline": "為替を除くと、一般建機＋13.7%・鉱山機械−1.4%",
+      "claim_type": "fact",
+      "takeaway": "為替を除くと、一般建機＋13.7%・鉱山機械−1.4%",
+      "evidence_refs": [
+        "e_general",
+        "e_mining"
+      ],
+      "visual": {
+        "pattern": "reported_vs_constant_currency",
+        "pattern_id": "reported_vs_constant_currency",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "+13.7%",
+        "-1.4%"
+      ]
+    },
+    {
+      "id": "S06",
+      "role": "finding",
+      "headline": "7〜9月の建機増収の78%を北米・中南米が占める",
+      "claim_type": "fact",
+      "takeaway": "7〜9月の建機増収の78%を北米・中南米が占める",
+      "evidence_refs": [
+        "e_region",
+        "e_us_share"
+      ],
+      "visual": {
+        "pattern": "regional_contribution",
+        "pattern_id": "regional_contribution",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "78.3%",
+        "1,338"
+      ]
+    },
+    {
+      "id": "S07",
+      "role": "comparison",
+      "headline": "建機売上は＋14.9%、為替除外では＋5.9%",
+      "claim_type": "fact",
+      "takeaway": "建機売上は＋14.9%、為替除外では＋5.9%",
+      "evidence_refs": [
+        "e_fx"
+      ],
+      "visual": {
+        "pattern": "reported_vs_constant_currency",
+        "pattern_id": "reported_vs_constant_currency",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "14.9%",
+        "5.9%"
+      ]
+    },
+    {
+      "id": "S08",
+      "role": "hypothesis",
+      "headline": "コスト増は確認できるが、影響の定量内訳は未特定",
+      "claim_type": "interpretation",
+      "takeaway": "コスト増は確認できるが、影響の定量内訳は未特定",
+      "evidence_refs": [
+        "e_cost",
+        "e_h1_margin"
+      ],
+      "visual": {
+        "pattern": "evidence_ladder",
+        "pattern_id": "evidence_ladder",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "コスト増",
+        "未特定"
+      ],
+      "uncertainties": [
+        "他の原因や代替解釈を排除できない。"
+      ]
+    },
+    {
+      "id": "S09",
+      "role": "finding",
+      "headline": "通期予想は売上＋1,480億円・営業利益＋300億円へ上方修正",
+      "claim_type": "fact",
+      "takeaway": "通期予想は売上＋1,480億円・営業利益＋300億円へ上方修正",
+      "evidence_refs": [
+        "e_guidance",
+        "e_h2_margin"
+      ],
+      "visual": {
+        "pattern": "guidance_revision",
+        "pattern_id": "guidance_revision",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "1,480",
+        "300",
+        "13.0%"
+      ]
+    },
+    {
+      "id": "S10",
+      "role": "decision",
+      "headline": "次回決算では、数量・為替・利益率を分けて追うべきか",
+      "claim_type": "recommendation",
+      "takeaway": "次回決算では、数量・為替・利益率を分けて追うべきか",
+      "evidence_refs": [
+        "e_evaluation",
+        "e_general",
+        "e_mining",
+        "e_cost"
+      ],
+      "visual": {
+        "pattern": "decision_option_matrix",
+        "pattern_id": "decision_option_matrix",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "A",
+        "B",
+        "C"
+      ],
+      "uncertainties": [
+        "他の原因や代替解釈を排除できない。"
+      ],
+      "discussion": {
+        "question": "次回決算で追跡する指標はどの粒度とするか？",
+        "options": [
+          "A：売上と利益のみ",
+          "B：数量・為替・採算まで分解",
+          "C：原価費目・品目まで分析"
+        ],
+        "next_action": "公開情報だけで再現可能なBを採用し、内部データがあればCへ拡張",
+        "missing_information": [
+          "製品別原価",
+          "関税影響額",
+          "費用の詳細内訳"
+        ]
+      }
+    },
+    {
+      "id": "S11",
+      "role": "context",
+      "headline": "数値・期間・計算・推測の違いを最後まで明示する",
+      "claim_type": "fact",
+      "takeaway": "数値・期間・計算・推測の違いを最後まで明示する",
+      "evidence_refs": [
+        "e_h1_sales",
+        "e_h1_op",
+        "e_guidance"
+      ],
+      "visual": {
+        "pattern": "evidence_ladder",
+        "pattern_id": "evidence_ladder",
+        "visual_focus": "数値・比較・対比の主要なメッセージ",
+        "design_notes": "主張・図の方向・期間・分母を一致させ、注記を省略しない。",
+        "expected_reading_order": [
+          "主張",
+          "主要データ",
+          "意味・注記"
+        ]
+      },
+      "audit_tokens": [
+        "2026年10月29日",
+        "2,158,639"
+      ]
+    }
+  ]
+}

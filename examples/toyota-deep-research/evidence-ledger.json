@@ -1,0 +1,350 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "id": "T1",
+      "publisher": "Toyota Motor Corporation",
+      "title": "FY2027 Q1 Financial Results Presentation",
+      "published_at": "2026-08-04",
+      "locator": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_en.pdf",
+      "type": "official_presentation",
+      "accessed_at": "2026-11-01"
+    },
+    {
+      "id": "T2",
+      "publisher": "Toyota Motor Corporation",
+      "title": "FY2027 Q1 Investor Q&A",
+      "published_at": "2026-08-04",
+      "locator": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_qa_en.pdf",
+      "type": "official_qa",
+      "accessed_at": "2026-11-01"
+    },
+    {
+      "id": "T3",
+      "publisher": "Toyota Motor Corporation",
+      "title": "FY2027 Q1 Financial Summary (TSE)",
+      "published_at": "2026-08-04",
+      "locator": "https://www2.jpx.co.jp/disc/72030/081220260730503849_tse-qcedifsm-72030-20260804372030-ixbrl.htm",
+      "type": "official_filing",
+      "accessed_at": "2026-11-01"
+    },
+    {
+      "id": "P1",
+      "publisher": "Subaru Corporation",
+      "title": "FY2027 Q1 Latest Results",
+      "published_at": "2026-08-05",
+      "locator": "https://www.subaru.co.jp/ir/finance/latest-results.html",
+      "type": "peer_filing",
+      "accessed_at": "2026-11-01"
+    },
+    {
+      "id": "P2",
+      "publisher": "Honda Motor Co.",
+      "title": "FY2027 Q1 Financial Results",
+      "published_at": "2026-08-05",
+      "locator": "https://global.honda/en/investors/library/filings/auto_20260804509009/pdfFile.pdf",
+      "type": "peer_filing",
+      "accessed_at": "2026-11-01"
+    },
+    {
+      "id": "P3",
+      "publisher": "Honda Motor Co.",
+      "title": "FY2027 Q1 Presentation Script",
+      "published_at": "2026-08-05",
+      "locator": "https://global.honda/en/investors/news/news20260805/main/0/link/FYE202703_1Q_financial_presentation_script_e.pdf",
+      "type": "official_presentation",
+      "accessed_at": "2026-11-01"
+    },
+    {
+      "id": "T4",
+      "publisher": "Toyota Motor Corporation",
+      "title": "Toyota Investor Relations Schedule",
+      "published_at": null,
+      "locator": "https://global.toyota/jp/ir/",
+      "type": "official_filing",
+      "accessed_at": "2026-11-01"
+    }
+  ],
+  "observations": [
+    {
+      "id": "E01",
+      "source_id": "T3",
+      "statement": "Sales revenue FY2027 Q1",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 13525.4,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E02",
+      "source_id": "T3",
+      "statement": "Sales revenue prior-year Q1",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2025-04-01/2025-06-30",
+      "kind": "actual",
+      "value": 12253.326,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E03",
+      "source_id": "T3",
+      "statement": "Operating profit FY2027 Q1",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 1063.473,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E04",
+      "source_id": "T3",
+      "statement": "Operating profit prior-year Q1",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2025-04-01/2025-06-30",
+      "kind": "actual",
+      "value": 1166.141,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E05",
+      "source_id": "T3",
+      "statement": "Attributable profit FY2027 Q1",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 1477.044,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E06",
+      "source_id": "T3",
+      "statement": "Attributable profit prior-year Q1",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2025-04-01/2025-06-30",
+      "kind": "actual",
+      "value": 841.345,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E07",
+      "source_id": "T1",
+      "statement": "Other income current and prior quarter: 900.3bn and 86.0bn",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 900.3,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E08",
+      "source_id": "T2",
+      "statement": "Other income includes about JPY600bn from Toyota Industries share sale and about JPY300bn FX gains on USD assets",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "management_commentary",
+      "value": 600,
+      "unit": "billion JPY",
+      "caveat": "Approximate amounts; not an exact bridge of attributable net income"
+    },
+    {
+      "id": "E09",
+      "source_id": "T1",
+      "statement": "Q1 operating earnings bridge reported: FX+345, cost reduction-85, marketing+70, expenses-190, other-242.6",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": -102.6,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E10",
+      "source_id": "T2",
+      "statement": "Other bridge unrealized profit adjustment approximately -250bn; related to group inventory and currency effects",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "management_commentary",
+      "value": -250,
+      "unit": "billion JPY",
+      "caveat": "Not pure demand deterioration"
+    },
+    {
+      "id": "E11",
+      "source_id": "T1",
+      "statement": "Consolidated units FY2027 Q1 2395k vs FY2026 2411k",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 2395,
+      "unit": "thousand vehicles",
+      "caveat": "2025 comparator includes Hino 26k units"
+    },
+    {
+      "id": "E12",
+      "source_id": "T1",
+      "statement": "Toyota and Lexus retail 2552k vs 2643k",
+      "status": "verified",
+      "scope": "Toyota and Lexus worldwide retail",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 2552,
+      "unit": "thousand vehicles"
+    },
+    {
+      "id": "E13",
+      "source_id": "T1",
+      "statement": "HEV retail 1238k vs 1160k",
+      "status": "verified",
+      "scope": "Toyota and Lexus worldwide retail",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 1238,
+      "unit": "thousand vehicles"
+    },
+    {
+      "id": "E14",
+      "source_id": "T1",
+      "statement": "Electrified share 55.3% vs 47.4%",
+      "status": "verified",
+      "scope": "Toyota and Lexus worldwide retail",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 55.3,
+      "unit": "percent"
+    },
+    {
+      "id": "E15",
+      "source_id": "T2",
+      "statement": "Q1 US tariff impact undisclosed; FY estimate 1.38tr yen lowered by 70bn",
+      "status": "verified",
+      "scope": "Toyota FY2027 estimated full-year tariff impact",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "forecast",
+      "value": 1310,
+      "unit": "billion JPY",
+      "caveat": "Not Q1 actual"
+    },
+    {
+      "id": "E16",
+      "source_id": "T2",
+      "statement": "BEV project revision one-off amount is intentionally not disclosed",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "management_commentary"
+    },
+    {
+      "id": "E17",
+      "source_id": "T2",
+      "statement": "FY2027 raw materials alone approximately 1.2 trillion yen; plans to offset roughly half via prices",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2027-03-31",
+      "kind": "forecast",
+      "value": 1200,
+      "unit": "billion JPY",
+      "caveat": "Management intention, not accomplished realization"
+    },
+    {
+      "id": "E18",
+      "source_id": "P1",
+      "statement": "Subaru Q1 consolidated revenue +3.0% and operating income -44.3%; tariff, raw materials and incentives factors",
+      "status": "verified",
+      "scope": "Subaru consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": -44.3,
+      "unit": "percent",
+      "caveat": "Not comparable directly to Toyota without scale and geographic mix control"
+    },
+    {
+      "id": "E19",
+      "source_id": "P2",
+      "statement": "Honda Q1 consolidated operating profit 530.7bn, 117.4% year-on-year increase",
+      "status": "verified",
+      "scope": "Honda consolidated",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 530.7,
+      "unit": "billion JPY",
+      "caveat": "Motorcycle and financial services included"
+    },
+    {
+      "id": "E20",
+      "source_id": "P3",
+      "statement": "Honda motorcycle profit 233.9bn, automotive operating profit 192.1bn and auto margin 5.0%",
+      "status": "verified",
+      "scope": "Honda automobile segment",
+      "period": "2026-04-01/2026-06-30",
+      "kind": "actual",
+      "value": 192.1,
+      "unit": "billion JPY",
+      "caveat": "Different segment definition than Toyota consolidated"
+    },
+    {
+      "id": "E21",
+      "source_id": "T1",
+      "statement": "FY2027 operating profit forecast revised from 3000bn to 3400bn",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2027-03-31",
+      "kind": "forecast",
+      "value": 3400,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E22",
+      "source_id": "T1",
+      "statement": "FY2027 forecast revision bridge: FX+480, cost reduction-120, marketing+230, expenses-50, other-140",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2027-03-31",
+      "kind": "forecast",
+      "value": 400,
+      "unit": "billion JPY"
+    },
+    {
+      "id": "E23",
+      "source_id": "T4",
+      "statement": "FY2027 2Q results release scheduled for 2026-11-05",
+      "status": "verified",
+      "scope": "Toyota IR",
+      "period": "2026-11-05",
+      "kind": "qualitative",
+      "caveat": "Not yet actual as of 2026-11-01"
+    },
+    {
+      "id": "E24",
+      "source_id": "T2",
+      "statement": "HEV demand and capacity investments for 2027-2028; US inventories and incentives low versus competitors per management",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-04-01/2027-03-31",
+      "kind": "management_commentary",
+      "caveat": "Management assertion without independent unit-level profitability estimate"
+    },
+    {
+      "id": "E25",
+      "source_id": "T2",
+      "statement": "FY projection Middle East shipment recovery from 50% initial assumption to 75% from September",
+      "status": "verified",
+      "scope": "Toyota consolidated",
+      "period": "2026-09-01/2027-03-31",
+      "kind": "forecast",
+      "value": 75,
+      "unit": "percent",
+      "caveat": "Forecast of logistics capacity, not actual delivered retail sales"
+    }
+  ]
+}

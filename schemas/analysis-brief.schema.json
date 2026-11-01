@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Analysis Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "primary_question",
+    "language",
+    "hypotheses",
+    "conclusions"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "primary_question": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "default": "ja"
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "hypothesis",
+          "evidence_ids",
+          "counterevidence_ids",
+          "confidence",
+          "falsifier",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "hypothesis": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counterevidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "undetermined"
+            ]
+          },
+          "falsifier": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "supported",
+              "refuted",
+              "mixed",
+              "unresolved"
+            ]
+          },
+          "limitation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "claim",
+          "evidence_ids",
+          "confidence",
+          "relevance"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "undetermined"
+            ]
+          },
+          "relevance": {
+            "type": "string"
+          },
+          "caveat": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

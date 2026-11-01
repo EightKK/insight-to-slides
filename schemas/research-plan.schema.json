@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "mode",
+    "question",
+    "as_of",
+    "max_retrievals",
+    "gaps"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "mode": {
+      "enum": [
+        "presentation",
+        "analysis",
+        "research"
+      ]
+    },
+    "question": {
+      "type": "string",
+      "minLength": 4
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "max_retrievals": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "claim",
+          "decision_impact",
+          "retrieval_cost",
+          "preferred_sources",
+          "falsifier",
+          "required_evidence_ids",
+          "resolution"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "decision_impact": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "retrieval_cost": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "preferred_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "falsifier": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "resolution": {
+            "enum": [
+              "pending",
+              "covered",
+              "unavailable",
+              "excluded"
+            ]
+          },
+          "limitation": {
+            "type": "string",
+            "description": "Required for unavailable and excluded gaps: why the evidence cannot or will not be obtained."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Integrated monthly factory evidence-to-decision contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "factory_context",
+    "central_question",
+    "supported_answer",
+    "cross_ledger_checks",
+    "operational_scenarios",
+    "decisions",
+    "sources",
+    "business_limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "factory_context": {
+      "type": "object",
+      "required": [
+        "period",
+        "plant",
+        "synthetic"
+      ],
+      "properties": {
+        "period": {
+          "type": "string"
+        },
+        "plant": {
+          "type": "string"
+        },
+        "synthetic": {
+          "type": "boolean"
+        }
+      }
+    },
+    "central_question": {
+      "type": "string",
+      "minLength": 12
+    },
+    "supported_answer": {
+      "type": "string",
+      "minLength": 25
+    },
+    "cross_ledger_checks": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "source_tables",
+          "result"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "source_tables": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "result": {
+            "enum": [
+              "passed",
+              "blocked",
+              "qualified"
+            ]
+          },
+          "limitation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "operational_scenarios": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "expected_revenue",
+          "expected_contribution",
+          "assumptions",
+          "tradeoff"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "expected_revenue": {
+            "type": "number"
+          },
+          "expected_contribution": {
+            "type": "number"
+          },
+          "assumptions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "tradeoff": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "decision",
+          "owner",
+          "condition",
+          "reversal_trigger"
+        ],
+        "properties": {
+          "decision": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "reversal_trigger": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "business_limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

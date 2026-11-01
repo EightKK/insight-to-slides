@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "fictional-mixed-model-components-wip-2026",
+  "source_classification": "synthetic_fictional",
+  "plant": "架空の精密部品工場（3品目・5工程）",
+  "period_workdays": 30,
+  "starting_wip_units": 2400,
+  "ending_wip_units": 4200,
+  "average_release_units_per_day": 750,
+  "average_completion_units_per_day": 690,
+  "average_customer_demand_units_per_day": 710,
+  "days_for_scenario": 22,
+  "stages": [
+    {
+      "id": "cut",
+      "name": "切断",
+      "effective_capacity_per_day": 780,
+      "wip_units": 330,
+      "aging": {
+        "0-2": 260,
+        "3-5": 60,
+        "6+": 10
+      }
+    },
+    {
+      "id": "machining",
+      "name": "加工",
+      "effective_capacity_per_day": 760,
+      "wip_units": 430,
+      "aging": {
+        "0-2": 270,
+        "3-5": 140,
+        "6+": 20
+      }
+    },
+    {
+      "id": "heat",
+      "name": "熱処理",
+      "effective_capacity_per_day": 690,
+      "wip_units": 2400,
+      "aging": {
+        "0-2": 620,
+        "3-5": 800,
+        "6+": 980
+      }
+    },
+    {
+      "id": "inspection",
+      "name": "検査",
+      "effective_capacity_per_day": 770,
+      "wip_units": 590,
+      "aging": {
+        "0-2": 320,
+        "3-5": 160,
+        "6+": 110
+      }
+    },
+    {
+      "id": "packing",
+      "name": "梱包",
+      "effective_capacity_per_day": 800,
+      "wip_units": 450,
+      "aging": {
+        "0-2": 280,
+        "3-5": 100,
+        "6+": 70
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "status_quo",
+      "name": "現状継続",
+      "release_per_day": 750,
+      "completed_per_day": 690,
+      "customer_demand_per_day": 710,
+      "capacity_per_day": 690
+    },
+    {
+      "id": "output_only",
+      "name": "能力改善のみ",
+      "release_per_day": 750,
+      "completed_per_day": 710,
+      "customer_demand_per_day": 710,
+      "capacity_per_day": 735
+    },
+    {
+      "id": "release_only",
+      "name": "投入制御のみ",
+      "release_per_day": 635,
+      "completed_per_day": 690,
+      "customer_demand_per_day": 710,
+      "capacity_per_day": 690
+    },
+    {
+      "id": "combined",
+      "name": "能力改善＋投入制御",
+      "release_per_day": 635,
+      "completed_per_day": 710,
+      "customer_demand_per_day": 710,
+      "capacity_per_day": 735
+    }
+  ],
+  "pilot": {
+    "release_per_day": 635,
+    "completion_target_per_day": 710,
+    "post_pilot_release_per_day": 710,
+    "maximum_assumed_capacity_per_day": 735,
+    "target_end_wip_units": 2550,
+    "average_wip_valuation_yen_per_unit": 18000,
+    "recommended_scenario_id": "combined"
+  },
+  "assumptions": [
+    "Completed good units are assumed to match shipment demand during the pilot.",
+    "No scrap, rework or customer mix change is modeled.",
+    "Starting WIP is assumed to contain enough usable material in each recipe and product family.",
+    "Capacity recovery from loss-time reduction is approximate and must be demonstrated in a pilot.",
+    "Working capital conversion is not guaranteed by an arithmetic reduction in WIP book value."
+  ],
+  "constraint_capacity_model": {
+    "available_minutes_per_day": 960,
+    "theoretical_units_per_day": 780,
+    "baseline_lost_minutes_per_day": {
+      "changeover": 55,
+      "unexpected_stop": 36,
+      "recipe_dispatch_idle": 20
+    },
+    "pilot_minutes_recovered_per_day": {
+      "changeover": 25,
+      "unexpected_stop": 20,
+      "recipe_dispatch_idle": 10
+    },
+    "proposed_effective_capacity_rounded_per_day": 735,
+    "baseline_realized_output_units_per_day": 690,
+    "constraint_stage_id": "heat"
+  },
+  "benefit_basis_note": "WIP reduction is valued at book cost; working capital conversion and cash release are not guaranteed by the arithmetic reduction."
+}

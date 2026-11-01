@@ -1,0 +1,5 @@
+﻿period,sku,planned_good_units,actual_good_units,wip_starts_units,wip_open_units,wip_close_units,scrap_units,production_achievement_pct
+2026-10,AX-100,1200,900,870,250,220,0,75.0
+2026-10,BX-200,1500,1900,1890,170,160,0,126.7
+2026-10,CX-300,650,700,770,200,270,0,107.7
+2026-10,DX-400,370,290,280,110,100,0,78.4

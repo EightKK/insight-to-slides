@@ -1,0 +1,307 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Argumentation and Decision Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "audience",
+    "governing_question",
+    "current_answer",
+    "evidence",
+    "claims",
+    "questions",
+    "hypotheses",
+    "decision"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 3
+    },
+    "governing_question": {
+      "type": "string",
+      "minLength": 10
+    },
+    "current_answer": {
+      "type": "string",
+      "minLength": 15
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "undetermined"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source",
+          "summary"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 3
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 8
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "kind",
+          "evidence_ids",
+          "causal_basis"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 8
+          },
+          "kind": {
+            "enum": [
+              "fact",
+              "interpretation",
+              "hypothesis",
+              "recommendation"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "causal_basis": {
+            "enum": [
+              "not_causal",
+              "management_explanation",
+              "independently_tested",
+              "hypothesis",
+              "association_only"
+            ]
+          },
+          "qualification": {
+            "type": "string"
+          },
+          "prominence": {
+            "enum": [
+              "key",
+              "supporting",
+              "background"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "status",
+          "answer",
+          "supporting_claim_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 6
+          },
+          "status": {
+            "enum": [
+              "answered",
+              "conditional",
+              "unanswerable"
+            ]
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 8
+          },
+          "supporting_claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitation": {
+            "type": "string"
+          },
+          "governing": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "supporting_evidence_ids",
+          "counter_evidence_ids",
+          "falsifier",
+          "confidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 8
+          },
+          "supporting_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "falsifier": {
+            "type": "string",
+            "minLength": 8
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "undetermined"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": [
+        "question",
+        "working_assessment",
+        "options",
+        "reversal_conditions"
+      ],
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 10
+        },
+        "working_assessment": {
+          "type": "string",
+          "minLength": 10
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "merit",
+              "tradeoff"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 2
+              },
+              "merit": {
+                "type": "string",
+                "minLength": 6
+              },
+              "tradeoff": {
+                "type": "string",
+                "minLength": 6
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "reversal_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 8
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "claim_ids",
+          "purpose"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

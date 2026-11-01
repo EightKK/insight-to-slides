@@ -1,0 +1,40 @@
+{
+  "source_values": {
+    "total_sales_2025q3_mEUR": 7516,
+    "total_sales_2026q3_mEUR": 11662,
+    "ibm_2025q3_mEUR": 1962,
+    "ibm_2026q2_mEUR": 2762,
+    "ibm_2026q3_mEUR": 3289,
+    "total_sales_2026q2_mEUR": 9326,
+    "gm_2026q2_pct": 54.0,
+    "gm_2026q3_pct": 57.5,
+    "gm_2025q3_pct": 51.6,
+    "op_income_2025q3_mEUR": 2468,
+    "op_income_2026q3_mEUR": 5173,
+    "net_income_2025q3_mEUR": 2125,
+    "net_income_2026q3_mEUR": 4960,
+    "fcf_2026q1_mEUR": -2608,
+    "fcf_2026q2_mEUR": 1317,
+    "fcf_2026q3_mEUR": 11351
+  },
+  "calculated": {
+    "sales_yoy_pct": 55.16232038318254,
+    "ibm_qoq_pct": 19.08037653874004,
+    "ibm_share_q2_pct": 29.6161269568947,
+    "ibm_share_q3_pct": 28.202709655290686,
+    "ibm_share_qoq_pp": -1.4134173016040141,
+    "ibm_growth_contribution_yoy_pct": 32.00675349734684,
+    "systems_sales_q3_mEUR": 8373,
+    "systems_sales_2025q3_mEUR": 5554,
+    "systems_growth_yoy_mEUR": 2819,
+    "gross_margin_qoq_pp": 3.5,
+    "gross_margin_yoy_pp": 5.899999999999999,
+    "op_income_yoy_pct": 109.60291734197729,
+    "net_income_yoy_pct": 133.41176470588235,
+    "q1_q3_sales_bEUR": 29.755,
+    "q4_sales_required_for_44_to_45_bEUR": [
+      14.245000000000001,
+      15.245000000000001
+    ]
+  }
+}

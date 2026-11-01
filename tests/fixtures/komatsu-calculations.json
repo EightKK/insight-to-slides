@@ -1,0 +1,106 @@
+{
+  "calculations": [
+    {
+      "id": "h1_sales_growth",
+      "expression": "(H1.sales_2026 / H1.sales_2025 - 1) * 100",
+      "expected": 14.12,
+      "absolute_tolerance": 0.02
+    },
+    {
+      "id": "h1_op_growth",
+      "expression": "(H1.operating_2026 / H1.operating_2025 - 1) * 100",
+      "expected": 3.45,
+      "absolute_tolerance": 0.02
+    },
+    {
+      "id": "h1_margin_2026",
+      "expression": "H1.operating_2026 / H1.sales_2026 * 100",
+      "expected": 13.278,
+      "absolute_tolerance": 0.005
+    },
+    {
+      "id": "h1_margin_2025",
+      "expression": "H1.operating_2025 / H1.sales_2025 * 100",
+      "expected": 14.647,
+      "absolute_tolerance": 0.005
+    },
+    {
+      "id": "q2_sales_growth",
+      "expression": "(Q2.sales_2026 / Q2.sales_2025 - 1) * 100",
+      "expected": 13.59,
+      "absolute_tolerance": 0.02
+    },
+    {
+      "id": "q2_op_growth",
+      "expression": "(Q2.operating_2026 / Q2.operating_2025 - 1) * 100",
+      "expected": -1.17,
+      "absolute_tolerance": 0.02
+    },
+    {
+      "id": "seg_sales_growth",
+      "expression": "(construction_H1.sales_2026 / construction_H1.sales_2025 - 1)*100",
+      "expected": 14.77,
+      "absolute_tolerance": 0.02
+    },
+    {
+      "id": "seg_profit_growth",
+      "expression": "(construction_H1.profit_2026 / construction_H1.profit_2025 - 1)*100",
+      "expected": 1.04,
+      "absolute_tolerance": 0.02
+    },
+    {
+      "id": "seg_margin_2026",
+      "expression": "construction_H1.profit_2026 / construction_H1.sales_2026 * 100",
+      "expected": 12.226,
+      "absolute_tolerance": 0.005
+    },
+    {
+      "id": "seg_margin_2025",
+      "expression": "construction_H1.profit_2025 / construction_H1.sales_2025 * 100",
+      "expected": 13.888,
+      "absolute_tolerance": 0.005
+    },
+    {
+      "id": "usa_growth_contribution",
+      "expression": "(regions_Q2.north_america + regions_Q2.latin_america)/regions_Q2.total_delta_reported*100",
+      "expected": 78.33,
+      "absolute_tolerance": 0.02
+    },
+    {
+      "id": "q2_region_reconciliation",
+      "expression": "regions_Q2.north_america+regions_Q2.latin_america+regions_Q2.europe+regions_Q2.africa+regions_Q2.middle_east+regions_Q2.oceania+regions_Q2.asia+regions_Q2.china+regions_Q2.cis+regions_Q2.japan",
+      "expected": 1338,
+      "absolute_tolerance": 0.01
+    },
+    {
+      "id": "forecast_sales_revision",
+      "expression": "forecast.sales_oct - forecast.sales_july",
+      "expected": 1480,
+      "absolute_tolerance": 0.01
+    },
+    {
+      "id": "forecast_profit_revision",
+      "expression": "forecast.operating_oct - forecast.operating_july",
+      "expected": 300,
+      "absolute_tolerance": 0.01
+    },
+    {
+      "id": "h2_implied_sales",
+      "expression": "forecast.sales_oct - H1.sales_2026",
+      "expected": 22913.61,
+      "absolute_tolerance": 0.01
+    },
+    {
+      "id": "h2_implied_profit",
+      "expression": "forecast.operating_oct - H1.operating_2026",
+      "expected": 2983.75,
+      "absolute_tolerance": 0.01
+    },
+    {
+      "id": "h2_implied_margin",
+      "expression": "(forecast.operating_oct - H1.operating_2026)/(forecast.sales_oct - H1.sales_2026)*100",
+      "expected": 13.0217,
+      "absolute_tolerance": 0.005
+    }
+  ]
+}

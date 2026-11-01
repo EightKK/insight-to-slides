@@ -1,0 +1,1 @@
+{"calculations":[{"id":"azure_growth_contribution_pct","expression":"(quarter.azure_current - quarter.azure_previous) / (quarter.revenue_current - quarter.revenue_previous) * 100","expected":73.81,"absolute_tolerance":0.05}]}

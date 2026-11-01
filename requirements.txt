@@ -1,0 +1,9 @@
+# Python 3.9+ packages for the insight-to-slides scripts and tests.
+# Install: python3 -m pip install -r requirements.txt
+pymupdf>=1.24
+pillow>=10.0
+jsonschema>=4.18
+# External programs (not pip-installable):
+# - LibreOffice (soffice / libreoffice) - only needed by render_review.py for .pptx input.
+#   If it is not on PATH, set the SOFFICE environment variable to the soffice executable.
+# No poppler tools are required (PDF text is read with PyMuPDF).

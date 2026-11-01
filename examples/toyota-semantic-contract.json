@@ -1,0 +1,19 @@
+{
+  "deck": "Toyota FY2027 Q1 - Japanese, investor/executive review",
+  "checks": [
+    {"id":"actual-sales-up","type":"numeric_direction","current":"sales_current","previous":"sales_prev","expected":"up"},
+    {"id":"actual-operating-profit-down","type":"numeric_direction","current":"op_current","previous":"op_prev","expected":"down"},
+    {"id":"owner-profit-up","type":"numeric_direction","current":"owner_profit_current","previous":"owner_profit_prev","expected":"up"},
+    {"id":"vehicle-volume-down","type":"numeric_direction","current":"vehicles_current","previous":"vehicles_prev","expected":"down"},
+    {"id":"factors-reconcile","type":"reconcile","current":"op_current","previous":"op_prev","components":["factors.marketing","factors.fx","factors.cost_reduction","factors.expenses","factors.other"],"tolerance":0.12},
+    {"id":"margin-change","type":"margin_points","profit_current":"op_current","sales_current":"sales_current","profit_previous":"op_prev","sales_previous":"sales_prev","expected_points":-1.66,"tolerance":0.02},
+    {"id":"sales-growth-vector-right","type":"signed_vector_bar","page":2,"current":"sales_current","previous":"sales_prev","axis_x_fraction":0.504,"y_fraction_range":[0.36,0.43],"rgb":[0,126,136]},
+    {"id":"profit-decline-vector-left","type":"signed_vector_bar","page":2,"current":"op_current","previous":"op_prev","axis_x_fraction":0.504,"y_fraction_range":[0.54,0.62],"rgb":[196,86,74]},
+    {"id":"profit-tiers-remain-distinct","type":"required_text","page":6,"tokens":["営業利益","税引前利益","親会社帰属利益"]},
+    {"id":"segment-do-not-sum","type":"scope_caveat","page":5,"tokens":["連結営業利益にしない","前年=100"]},
+    {"id":"other-driver-not-false-causation","type":"scope_caveat","page":4,"tokens":["その他","単独原因とは扱わない"]},
+    {"id":"forecast-explicit","type":"forecast_label","page":7,"tokens":["会社予想","実績ではない"]},
+    {"id":"consolidation-scope","type":"scope_caveat","page":9,"tokens":["Hino","除外"]},
+    {"id":"discussion-attributed-to-analyst","type":"required_text","page":8,"tokens":["分析者の提案","会社方針ではない"]}
+  ]
+}

@@ -1,0 +1,866 @@
+{
+  "purpose": "Semantic visual patterns chosen by the reader's analytical question. Check minimum_inputs before use; must_show items must be visible in the rendered page; avoid lists the most likely misreadings.",
+  "patterns": [
+    {
+      "id": "contrast_kpi",
+      "intent": "Expose a meaningful simultaneous divergence or trade-off",
+      "best_for": "Two compatible facts pointing in different directions",
+      "minimum_inputs": [
+        "two named metrics",
+        "units and timeframes",
+        "comparability statement"
+      ],
+      "composition": "Parallel evidence cards with a common baseline, one visual emphasis per card, and a unifying conclusion",
+      "must_show": [
+        "numeric values",
+        "direction and periods",
+        "relationship without implying causation"
+      ],
+      "avoid": [
+        "juxtaposing incomparable percentage bases as if additive",
+        "manufactured tension",
+        "decorative icon cards"
+      ],
+      "alternatives": [
+        "slope_before_after",
+        "cash_flow_bridge"
+      ],
+      "discussion_hook": "Which dimension should influence our judgment?"
+    },
+    {
+      "id": "variance_waterfall",
+      "intent": "Decompose a change from start to end into signed drivers",
+      "best_for": "Additive contributions using the same unit and disjoint categories",
+      "minimum_inputs": [
+        "start total",
+        "signed contributions",
+        "end total",
+        "reconciliation within tolerance"
+      ],
+      "composition": "Common zero baseline or cumulative steps; sorted major positive and negative contributions; final total anchored",
+      "must_show": [
+        "signed values",
+        "total = start + sum(drivers)",
+        "clear negative versus positive signs"
+      ],
+      "avoid": [
+        "double-counted overlapping categories",
+        "truncation",
+        "unreconciled components without explicit other"
+      ],
+      "alternatives": [
+        "ranked_comparison",
+        "composition_bar"
+      ],
+      "discussion_hook": "Which driver is responsible for most of the change?"
+    },
+    {
+      "id": "cash_flow_bridge",
+      "intent": "Make the transformation from a flow to its retained amount tangible",
+      "best_for": "Cash inflow minus cash outflows with consistent definitions",
+      "minimum_inputs": [
+        "cash inflow",
+        "deduction(s)",
+        "residual",
+        "accounting definition"
+      ],
+      "composition": "Aligned paired waterfalls or equation bars for old and new periods; identical numeric scale",
+      "must_show": [
+        "gross inflow",
+        "deductions",
+        "residual",
+        "formula and definition"
+      ],
+      "avoid": [
+        "mixing company CapEx including leases with cash PP&E purchases",
+        "unlabeled shifts in scale",
+        "suggesting accounting identity proves causality"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "variance_waterfall"
+      ],
+      "discussion_hook": "What changes in the cash retained, not only in the amount generated?"
+    },
+    {
+      "id": "trend_small_multiples",
+      "intent": "Compare changes over time while preserving distinct metrics",
+      "best_for": "Two or more trends on separate but aligned panels",
+      "minimum_inputs": [
+        "at least three time points",
+        "series definitions",
+        "comparable periods"
+      ],
+      "composition": "Aligned time axes, consistent ordering, direct-end labeling",
+      "must_show": [
+        "time period",
+        "measurement unit",
+        "trend context"
+      ],
+      "avoid": [
+        "dual axes pretending equivalent units",
+        "inconsistent timespans",
+        "excessive smoothing"
+      ],
+      "alternatives": [
+        "slope_before_after"
+      ],
+      "discussion_hook": "Are the two trends converging, diverging, or moving together?"
+    },
+    {
+      "id": "slope_before_after",
+      "intent": "Highlight a before-after movement",
+      "best_for": "Paired observations per category",
+      "minimum_inputs": [
+        "before and after values",
+        "common units",
+        "categories"
+      ],
+      "composition": "Two aligned vertical axes; connecting slopes where category tracking matters",
+      "must_show": [
+        "before / after dates",
+        "values or clear labels",
+        "direction"
+      ],
+      "avoid": [
+        "many crossing lines causing ambiguity",
+        "mismatched axes",
+        "confusing relative percentages with percentage points"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "trend_small_multiples"
+      ],
+      "discussion_hook": "Which item changed most significantly?"
+    },
+    {
+      "id": "ranked_comparison",
+      "intent": "Identify the few most important categories",
+      "best_for": "Ranking a common measure",
+      "minimum_inputs": [
+        "comparable measure",
+        "category names",
+        "units"
+      ],
+      "composition": "Sorted horizontal marks with direct values, highlight only focus items",
+      "must_show": [
+        "same baseline and scale",
+        "units",
+        "sorting rationale"
+      ],
+      "avoid": [
+        "zero-truncated bars",
+        "artificial top-N without disclosure",
+        "3D"
+      ],
+      "alternatives": [
+        "distribution_range"
+      ],
+      "discussion_hook": "Where is intervention most consequential?"
+    },
+    {
+      "id": "composition_bar",
+      "intent": "Communicate a part-of-whole relationship",
+      "best_for": "Mutually exclusive exhaustive categories",
+      "minimum_inputs": [
+        "parts",
+        "total",
+        "common denominator"
+      ],
+      "composition": "Single 100% stacked horizontal bar or proportion display plus absolute total",
+      "must_show": [
+        "denominator",
+        "parts sum approximately to total",
+        "percentage and size where useful"
+      ],
+      "avoid": [
+        "mixing category definitions",
+        "omitting unknown or other",
+        "treating share as growth"
+      ],
+      "alternatives": [
+        "variance_waterfall"
+      ],
+      "discussion_hook": "Which share dominates and what does that imply?"
+    },
+    {
+      "id": "distribution_range",
+      "intent": "Show variation, tails and outliers",
+      "best_for": "Individual observations beyond a mean",
+      "minimum_inputs": [
+        "distribution or quartiles",
+        "sample size",
+        "measurement units"
+      ],
+      "composition": "Box / dot plot with median and spread labeled",
+      "must_show": [
+        "sample size",
+        "scope and time",
+        "uncertainty if estimated"
+      ],
+      "avoid": [
+        "isolated averages",
+        "manufactured zeros",
+        "hidden exclusions"
+      ],
+      "alternatives": [
+        "ranked_comparison"
+      ],
+      "discussion_hook": "Are extreme cases driving the result?"
+    },
+    {
+      "id": "hypothesis_evidence_matrix",
+      "intent": "Separate alternative explanations from known facts",
+      "best_for": "Exploratory root-cause analysis",
+      "minimum_inputs": [
+        "two or more hypotheses",
+        "supporting and disconfirming evidence",
+        "unknowns"
+      ],
+      "composition": "Rows of hypotheses by evidence columns; symbols or words for support / contradiction / unknown",
+      "must_show": [
+        "falsifying tests",
+        "confidence",
+        "missing data"
+      ],
+      "avoid": [
+        "marking conjectures as proven",
+        "color-only states",
+        "empty evidence presented as proof"
+      ],
+      "alternatives": [
+        "evidence_ladder"
+      ],
+      "discussion_hook": "Which evidence would distinguish the competing explanations?"
+    },
+    {
+      "id": "decision_option_matrix",
+      "intent": "Make a specific choice deliberable",
+      "best_for": "Actionable alternatives evaluated against explicit criteria",
+      "minimum_inputs": [
+        "named decision owner or audience",
+        "at least two feasible options",
+        "criteria and trade-offs"
+      ],
+      "composition": "Comparable option columns with assumptions, benefits, costs, and triggers",
+      "must_show": [
+        "decision question",
+        "alternative option",
+        "what would change the recommendation"
+      ],
+      "avoid": [
+        "rigged scoring",
+        "false precision",
+        "artificial urgency"
+      ],
+      "alternatives": [
+        "hypothesis_evidence_matrix"
+      ],
+      "discussion_hook": "Which option do we adopt, and what evidence would cause us to revisit it?"
+    },
+    {
+      "id": "process_linkage",
+      "intent": "Explain a system or dependency chain",
+      "best_for": "Stages, responsibilities or observable leading/lagging indicators",
+      "minimum_inputs": [
+        "nodes and labels",
+        "meaning of each edge",
+        "conditional or causal status"
+      ],
+      "composition": "Left-to-right stages with explicit arrow semantics and evidence per stage",
+      "must_show": [
+        "stage outputs",
+        "what is measured versus assumed",
+        "feedback loop when material"
+      ],
+      "avoid": [
+        "unsupported causal arrows",
+        "crossing arrows",
+        "excessive nodes"
+      ],
+      "alternatives": [
+        "decision_option_matrix",
+        "evidence_ladder"
+      ],
+      "discussion_hook": "At which stage is the chain unverified or weakest?"
+    },
+    {
+      "id": "uncertainty_band",
+      "intent": "Communicate uncertainty without hiding it",
+      "best_for": "Scenario forecasts and estimate ranges",
+      "minimum_inputs": [
+        "estimate",
+        "range or clearly labeled direction-only bound",
+        "assumptions"
+      ],
+      "composition": "Range or threshold with nominal/bound markers; future data visually separated",
+      "must_show": [
+        "estimate versus realized",
+        "scenario assumptions",
+        "forecast horizon"
+      ],
+      "avoid": [
+        "inventing upper bounds",
+        "drawing open-ended > values as exact points",
+        "hiding forecast caveats"
+      ],
+      "alternatives": [
+        "slope_before_after"
+      ],
+      "discussion_hook": "What risk matters if the outcome is outside the expected range?"
+    },
+    {
+      "id": "evidence_ladder",
+      "intent": "Explain what is observed and what remains unknown",
+      "best_for": "A conclusion with differentiated evidentiary strength",
+      "minimum_inputs": [
+        "observed facts",
+        "interpretation",
+        "open questions"
+      ],
+      "composition": "Three tiers: observed / supported interpretation / unresolved assumption",
+      "must_show": [
+        "evidence provenance",
+        "uncertainty",
+        "next verification action"
+      ],
+      "avoid": [
+        "conflating facts and opinions",
+        "unqualified claims",
+        "pretending that absence of evidence is evidence of absence"
+      ],
+      "alternatives": [
+        "hypothesis_evidence_matrix"
+      ],
+      "discussion_hook": "What could make our present inference wrong?"
+    },
+    {
+      "id": "timeline_milestones",
+      "intent": "Show completed, underway and forecast milestones distinctly",
+      "best_for": "Event sequences and future commitments",
+      "minimum_inputs": [
+        "dated milestones",
+        "state or confidence",
+        "scope of timeframe"
+      ],
+      "composition": "Single continuous axis with past versus future distinction and annotated events",
+      "must_show": [
+        "time reference",
+        "actual versus forecast",
+        "units where numerical"
+      ],
+      "avoid": [
+        "nonlinear spacings on a linear timeline",
+        "invented milestones",
+        "unlabeled future certainty"
+      ],
+      "alternatives": [
+        "uncertainty_band"
+      ],
+      "discussion_hook": "What is the next observable checkpoint?"
+    },
+    {
+      "id": "reported_vs_constant_currency",
+      "intent": "Contrast nominal growth with company-defined FX-adjusted growth while respecting methodological limits",
+      "best_for": "Manufacturers with sizable international revenue and published currency-adjusted growth",
+      "minimum_inputs": [
+        "reported percentage",
+        "FX-adjusted percentage",
+        "matching period and scope",
+        "company calculation methodology"
+      ],
+      "composition": "Two aligned comparable scales or diverging measures with prominent FX-adjusted figure",
+      "must_show": [
+        "currency-adjustment definition",
+        "matching period",
+        "metric and denominator"
+      ],
+      "avoid": [
+        "claiming difference in percentage points is an exact cash FX contribution",
+        "comparing distinct product scopes",
+        "unlabeled constant-currency values"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "slope_before_after"
+      ],
+      "discussion_hook": "How much growth reflects underlying activity rather than translation?"
+    },
+    {
+      "id": "mix_margin_gap",
+      "intent": "Reveal whether revenue growth translates into profit while respecting segment definitions",
+      "best_for": "Manufacturing businesses with both segment sales and segment profits",
+      "minimum_inputs": [
+        "segment sales two periods",
+        "segment profits two periods",
+        "consistent segment boundaries"
+      ],
+      "composition": "Matched revenue and segment-profit deltas, followed by explicit segment margin shift",
+      "must_show": [
+        "gross-versus-intersegment scope",
+        "segment metric not confused with group operating income",
+        "same period"
+      ],
+      "avoid": [
+        "mixing company and segment margin",
+        "implying cost causes without support",
+        "percentage versus point conflation"
+      ],
+      "alternatives": [
+        "contrast_kpi"
+      ],
+      "discussion_hook": "What prevents incremental sales from converting into profit?"
+    },
+    {
+      "id": "regional_contribution",
+      "intent": "Decompose the net sales change by geography",
+      "best_for": "Regions with a complete additive reconciliation",
+      "minimum_inputs": [
+        "signed regional contributions",
+        "reported net change",
+        "region definitions and changes",
+        "FX scope"
+      ],
+      "composition": "Additive shares for positive major contributors and an explicitly labeled net-other segment",
+      "must_show": [
+        "signed negative offsets if material",
+        "total reconciliation",
+        "effects of FX where relevant"
+      ],
+      "avoid": [
+        "presenting a net remainder as all positive markets",
+        "hidden denominator",
+        "using market revenue shares as growth contributions"
+      ],
+      "alternatives": [
+        "variance_waterfall",
+        "ranked_comparison"
+      ],
+      "discussion_hook": "How concentrated is the period growth and what reversals could matter?"
+    },
+    {
+      "id": "guidance_revision",
+      "intent": "Show revision between dated company outlooks while keeping forecasts separate from actuals",
+      "best_for": "A new forecast versus a prior forecast with same fiscal scope",
+      "minimum_inputs": [
+        "old forecast date and values",
+        "new forecast date and values",
+        "difference",
+        "assumptions"
+      ],
+      "composition": "Old-to-new revised forecasts with upward/downward direction marks consistent with sign",
+      "must_show": [
+        "both forecast dates",
+        "currency/unit",
+        "forecast versus actual marker"
+      ],
+      "avoid": [
+        "down arrows for increases",
+        "guaranteed-outcome phrasing",
+        "unlabeled inferred H2 calculations"
+      ],
+      "alternatives": [
+        "uncertainty_band",
+        "slope_before_after"
+      ],
+      "discussion_hook": "What must hold for the upgraded forecast to be delivered?"
+    },
+    {
+      "id": "quarterly_divergence",
+      "intent": "Identify when top-line and profit trends separate between reporting periods",
+      "best_for": "Quarterly sales and operating profit growth with aligned comparison periods",
+      "minimum_inputs": [
+        "two or more quarter pairs",
+        "revenue growth per quarter",
+        "profit growth per quarter"
+      ],
+      "composition": "Small multiples with matched positions and one contrasting result highlight",
+      "must_show": [
+        "distinct quarterly and cumulative periods",
+        "year-over-year or sequential metric definitions"
+      ],
+      "avoid": [
+        "mixing quarterly and H1 in the same series",
+        "missing negative sign",
+        "scales that obscure divergence"
+      ],
+      "alternatives": [
+        "trend_small_multiples",
+        "contrast_kpi"
+      ],
+      "discussion_hook": "Did the quality of growth deteriorate in the recent quarter?"
+    },
+    {
+      "id": "margin_dilution",
+      "intent": "Show revenue growth and operating-profit growth going in different directions",
+      "best_for": "Comparable revenue and operating profit for two periods",
+      "minimum_inputs": [
+        "revenues and operating profits by period",
+        "calculated margin points"
+      ],
+      "composition": "Diverging comparison bars with a common axis, followed by a clearly labeled margin comparison",
+      "must_show": [
+        "both growth signs",
+        "margin before and after",
+        "percentage-point delta"
+      ],
+      "avoid": [
+        "negative bars to the right of zero",
+        "confusing pct with percentage points",
+        "implying constant consolidated scope"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "variance_waterfall"
+      ],
+      "discussion_hook": "Which additional data would change the judgment?"
+    },
+    {
+      "id": "volume_sales_divergence",
+      "intent": "Prevent a sales increase from being misattributed to unit demand",
+      "best_for": "Manufacturer sales and consolidated shipment-volume trends",
+      "minimum_inputs": [
+        "unit sales by period",
+        "sales by period",
+        "comparability caveat"
+      ],
+      "composition": "Two high-priority, independent metric cards plus an explicit question about price, mix, and exchange effects",
+      "must_show": [
+        "unit change",
+        "sales change",
+        "actual periods",
+        "scope warning"
+      ],
+      "avoid": [
+        "calling volume a cause without verification",
+        "mixing scope-adjusted and reported units"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "variance_waterfall"
+      ],
+      "discussion_hook": "Which additional data would change the judgment?"
+    },
+    {
+      "id": "profit_driver_waterfall",
+      "intent": "Reconcile the reported start-to-end operating-profit change",
+      "best_for": "Signed operating-profit factor bridge",
+      "minimum_inputs": [
+        "initial operating profit",
+        "signed additive factor list",
+        "final operating profit"
+      ],
+      "composition": "Vector waterfall with correctly connected cumulative steps",
+      "must_show": [
+        "start and end",
+        "signed factors",
+        "sum reconciliation",
+        "aggregated other caveat"
+      ],
+      "avoid": [
+        "incorrect waterfall sums",
+        "false independent causation for other",
+        "unlabeled units"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "variance_waterfall"
+      ],
+      "discussion_hook": "Which additional data would change the judgment?"
+    },
+    {
+      "id": "segment_profit_divergence",
+      "intent": "Contrast business units without falsely adding incompatible results",
+      "best_for": "Segment performance metrics across the same periods",
+      "minimum_inputs": [
+        "segment profits for at least two segments",
+        "operating profit basis",
+        "consolidation scope"
+      ],
+      "composition": "Side-by-side normalized-to-prior panels with one common scale and explicit scope footnote",
+      "must_show": [
+        "segment names",
+        "two-period profits",
+        "growth signs",
+        "prior=100 scale"
+      ],
+      "avoid": [
+        "different scales without notice",
+        "adding segments to group totals",
+        "comparing unrelated denominator bases"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "variance_waterfall"
+      ],
+      "discussion_hook": "Which additional data would change the judgment?"
+    },
+    {
+      "id": "profit_tier_divergence",
+      "intent": "Contrast operating, pretax and owners profit without treating them as synonyms",
+      "best_for": "Different accounting profit tiers within one financial report",
+      "minimum_inputs": [
+        "defined operating profit",
+        "pretax profit",
+        "profit attributable to owners"
+      ],
+      "composition": "Equal-width comparison rows with clearly labeled accounting tiers",
+      "must_show": [
+        "metric names",
+        "growth rates",
+        "scope caveat"
+      ],
+      "avoid": [
+        "representing final profit growth as an operating performance proof",
+        "inventing a specific below-line driver"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "variance_waterfall"
+      ],
+      "discussion_hook": "Which additional data would change the judgment?"
+    },
+    {
+      "id": "outlook_fact_separation",
+      "intent": "Display forecast alongside historical facts without category confusion",
+      "best_for": "Management earnings guidance with YoY changes",
+      "minimum_inputs": [
+        "management forecast amount",
+        "forecast period",
+        "outlook growth rate"
+      ],
+      "composition": "Forecast cards with visible status label and directional metrics",
+      "must_show": [
+        "company forecast",
+        "period",
+        "projected amount",
+        "uncertainty note"
+      ],
+      "avoid": [
+        "labeling projection as an actual",
+        "extrapolating Q1 mechanically to the full year"
+      ],
+      "alternatives": [
+        "contrast_kpi",
+        "variance_waterfall"
+      ],
+      "discussion_hook": "Which additional data would change the judgment?"
+    },
+    {
+      "id": "process_capacity_queue",
+      "intent": "Show where work accumulates along a process and how it relates to stage capacity",
+      "best_for": "Multi-stage flow lines where WIP concentrates at one or more stages",
+      "minimum_inputs": [
+        "ordered stage list",
+        "WIP per stage on one good-unit basis",
+        "effective capacity and actual output per stage per day",
+        "release rate"
+      ],
+      "composition": "Stages left-to-right in material order; queue bars above each stage; effective capacity versus actual output marks on a shared rate axis; the constraint candidate emphasised",
+      "must_show": [
+        "same unit basis for every stage",
+        "effective versus nameplate capacity distinction",
+        "snapshot date of WIP"
+      ],
+      "avoid": [
+        "calling the largest queue the proven root cause",
+        "nameplate capacity shown as achievable output",
+        "mixing units and hours across stages"
+      ],
+      "alternatives": [
+        "queue_age_distribution",
+        "wip_stock_flow_bridge"
+      ],
+      "discussion_hook": "Is the queue caused by capacity, release policy or batching, and what data would tell them apart?"
+    },
+    {
+      "id": "wip_stock_flow_bridge",
+      "intent": "Reconcile opening and closing WIP through releases, completions and exits",
+      "best_for": "Explaining why WIP rose or fell over a period",
+      "minimum_inputs": [
+        "opening WIP",
+        "releases",
+        "good completions",
+        "scrap and other exits",
+        "closing WIP"
+      ],
+      "composition": "Waterfall from opening to closing stock with signed flow steps; residual shown explicitly if conservation does not close",
+      "must_show": [
+        "opening + releases - completions - exits = closing",
+        "period and unit basis",
+        "any unexplained residual"
+      ],
+      "avoid": [
+        "mixing period averages with point-in-time stock",
+        "hiding a reconciliation residual",
+        "presenting book-value change as cash"
+      ],
+      "alternatives": [
+        "variance_waterfall",
+        "process_capacity_queue"
+      ],
+      "discussion_hook": "Which flow, releases or completions, should change to move closing WIP?"
+    },
+    {
+      "id": "queue_age_distribution",
+      "intent": "Expose aged work that totals and averages hide",
+      "best_for": "Queues where a long tail of old lots matters for delivery or quality",
+      "minimum_inputs": [
+        "queue location",
+        "age bins with counts",
+        "snapshot date"
+      ],
+      "composition": "Stacked or small-multiple bars per location by age band; oldest band emphasised; delivery-risk threshold marked if one is agreed",
+      "must_show": [
+        "age at snapshot, not cycle time",
+        "bin boundaries",
+        "location totals reconciling to WIP total"
+      ],
+      "avoid": [
+        "calling snapshot age a measured lead time",
+        "unlabelled or uneven bins",
+        "invented risk thresholds"
+      ],
+      "alternatives": [
+        "distribution_range",
+        "process_capacity_queue"
+      ],
+      "discussion_hook": "Which aged lots need a disposition decision now?"
+    },
+    {
+      "id": "service_feasibility_scenarios",
+      "intent": "Compare inventory or WIP interventions without hiding delivery damage",
+      "best_for": "Choosing among release-control, capacity and combined options",
+      "minimum_inputs": [
+        "baseline and at least two intervention scenarios",
+        "projected WIP per scenario",
+        "projected delivered output versus demand",
+        "capacity and release assumptions per scenario"
+      ],
+      "composition": "One row per scenario with aligned columns for WIP, delivered output, delivery gap and key assumption; the recommended scenario marked as conditional",
+      "must_show": [
+        "service gap next to inventory benefit",
+        "scenario assumptions",
+        "modelled, not observed, label"
+      ],
+      "avoid": [
+        "presenting projections as observed outcomes",
+        "showing WIP reduction without service impact",
+        "book value reduction shown as cash released"
+      ],
+      "alternatives": [
+        "decision_option_matrix",
+        "cause_intervention_gate"
+      ],
+      "discussion_hook": "Which option reduces WIP without breaking delivery, and under what guardrails?"
+    },
+    {
+      "id": "cause_intervention_gate",
+      "intent": "Connect a hypothesised constraint to a guarded pilot with explicit stop conditions",
+      "best_for": "Requesting approval for a pilot when the root cause is not yet proven",
+      "minimum_inputs": [
+        "observed evidence",
+        "unverified assumptions",
+        "competing explanation",
+        "measurable trigger and rollback condition"
+      ],
+      "composition": "Left: evidence and competing explanation; centre: proposed intervention; right: go, stop and rollback criteria with owners",
+      "must_show": [
+        "observation versus inference",
+        "counter-hypothesis",
+        "stop and rollback condition",
+        "decision owner"
+      ],
+      "avoid": [
+        "causal certainty without a test",
+        "a pilot without a rollback condition",
+        "invented thresholds"
+      ],
+      "alternatives": [
+        "hypothesis_evidence_matrix",
+        "decision_option_matrix"
+      ],
+      "discussion_hook": "What evidence would authorise the pilot, and what result would stop it?"
+    },
+    {
+      "id": "contribution_plan_actual_bridge",
+      "intent": "Explain the gap between planned and actual contribution by customer and SKU",
+      "best_for": "Monthly plant or business reviews with customer-SKU price and variable cost data",
+      "minimum_inputs": [
+        "planned and actual contribution per customer-SKU",
+        "price, volume and variable-cost components or a declared residual",
+        "definition of contribution versus operating profit"
+      ],
+      "composition": "Waterfall from planned to actual contribution with the largest customer-SKU drivers, remaining items grouped and labelled as net",
+      "must_show": [
+        "contribution (限界利益) label, not operating profit",
+        "signed drivers reconciling to the gap",
+        "period and currency unit"
+      ],
+      "avoid": [
+        "calling contribution operating profit",
+        "revenue shown as profit benefit",
+        "hiding negative-contribution items inside other"
+      ],
+      "alternatives": [
+        "profit_driver_waterfall",
+        "ranked_comparison"
+      ],
+      "discussion_hook": "Which customer-SKU gaps are recoverable next month, and which are structural?"
+    },
+    {
+      "id": "conditional_bom_cases",
+      "intent": "Show component requirements under explicitly conditional demand definitions",
+      "best_for": "When it is unknown whether prior-period backlog is inside the next-period forecast",
+      "minimum_inputs": [
+        "net build per SKU for each case",
+        "approved BOM quantities",
+        "usable supply",
+        "the open condition that separates the cases"
+      ],
+      "composition": "Two side-by-side cases with identical layout: demand, net build, component need, usable supply and shortage; the unresolved condition stated above both",
+      "must_show": [
+        "the condition that decides which case applies",
+        "shortage per case",
+        "that the cases are alternatives, not additive",
+        "procurement decision on hold until resolved"
+      ],
+      "avoid": [
+        "presenting one case as the answer",
+        "adding both cases",
+        "hiding components with no supply record"
+      ],
+      "alternatives": [
+        "decision_option_matrix",
+        "uncertainty_band"
+      ],
+      "discussion_hook": "Who confirms the backlog treatment, and by when, before material is ordered?"
+    },
+    {
+      "id": "inventory_demand_cover",
+      "intent": "Compare finished-goods stock with upcoming demand without presuming excess",
+      "best_for": "Inventory adequacy discussions where no agreed stock target exists, or to test against one",
+      "minimum_inputs": [
+        "finished-goods quantity per SKU",
+        "next two periods of distinct forecast",
+        "stock target or replenishment lead time if available"
+      ],
+      "composition": "Per-SKU bars of FG stock against stacked next-period and following-period demand; target band only if documented",
+      "must_show": [
+        "periods of demand covered",
+        "quality-held or allocated stock separated if known",
+        "target source, or the statement that none is agreed"
+      ],
+      "avoid": [
+        "labelling stock as excess or obsolete without an agreed policy",
+        "one-month cover as the only test",
+        "book-value reduction presented as cash"
+      ],
+      "alternatives": [
+        "ranked_comparison",
+        "composition_bar"
+      ],
+      "discussion_hook": "Which SKUs need a stock target decision before production is cut or increased?"
+    }
+  ]
+}

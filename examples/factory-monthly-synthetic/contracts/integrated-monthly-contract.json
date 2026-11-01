@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "factory_context": {
+    "period": "2026-10 actual / 2026-11-12 forecast",
+    "plant": "東浜精機 第2工場（架空）",
+    "synthetic": true
+  },
+  "central_question": "販売計画と確定受注、品目別製造実績・在庫・限界利益・共通部品制約を踏まえ、翌月の生産と供給をどう優先すべきか",
+  "supported_answer": "工場全体の生産達成率は高いが需要と品目構成が合っていない。CXの製造を抑え、AX/DXの供給優先度を高め、共通IC-7の追加確保を条件付きで判断する。同時にBX×東亜の赤字取引条件を見直す。",
+  "cross_ledger_checks": [
+    {
+      "name": "Customer-SKU sales vs contribution",
+      "source_tables": [
+        "sales_plan_actual_forecast.csv",
+        "customer_item_profit.csv"
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "SKU shipments vs finished goods",
+      "source_tables": [
+        "sales_plan_actual_forecast.csv",
+        "inventory_actual.csv"
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "Good completions and WIP flow",
+      "source_tables": [
+        "manufacturing_actual.csv",
+        "inventory_actual.csv"
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "BOM explosions against net forecast units",
+      "source_tables": [
+        "sales_plan_actual_forecast.csv",
+        "inventory_actual.csv",
+        "bom.csv"
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "Shared component usable stock",
+      "source_tables": [
+        "bom.csv",
+        "component_supply.csv"
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "Capacity, quality holds and shipment cutoff cannot be proven",
+      "source_tables": [
+        "manufacturing_actual.csv",
+        "inventory_actual.csv",
+        "sales_plan_actual_forecast.csv"
+      ],
+      "result": "qualified",
+      "limitation": "No order-level allocation / quality-hold / fulfillment cutoff event data."
+    }
+  ],
+  "operational_scenarios": [
+    {
+      "name": "Constrained supply",
+      "expected_revenue": 139.6,
+      "expected_contribution": 35.95,
+      "assumptions": [
+        "No IC-7 expedite",
+        "All projected orders materialize",
+        "No other bottlenecks",
+        "AX Hokuto 270 short"
+      ],
+      "tradeoff": "Protects procurement cost but sacrifices customer deliveries and modeled contribution."
+    },
+    {
+      "name": "Conditionally expedited supply",
+      "expected_revenue": 151.21,
+      "expected_contribution": 38.38,
+      "assumptions": [
+        "540 IC-7 delivered in time",
+        "Incremental 0.81 mJPY fee",
+        "No additional line/yield constraint",
+        "All projected orders materialize"
+      ],
+      "tradeoff": "Greater modeled contribution but supplier, quality, capacity and demand risks remain."
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Negotiate and conditionally authorize 540 IC-7 expedite",
+      "owner": "調達・品質",
+      "condition": "Confirm lead time, approved material, all-in fee <=0.81 mJPY, capacity, and firm-order basis",
+      "reversal_trigger": "No delivery/quality confirmation or demand falls below break-even"
+    },
+    {
+      "decision": "Adjust AX/DX production allocation; postpone CX November builds if FG is available",
+      "owner": "生産管理・製造・営業",
+      "condition": "Confirm finished stock is sellable and free for the November committed shipment dates",
+      "reversal_trigger": "CX firm orders exceed accessible FG or A/D capacity/material unavailable"
+    },
+    {
+      "decision": "Renegotiate BX Toua commercial terms",
+      "owner": "営業・原価",
+      "condition": "Validate customer contract and price elasticity",
+      "reversal_trigger": "Loss of volume or strategic service harm outweighs margin gain"
+    }
+  ],
+  "sources": [
+    "data/sales_plan_actual_forecast.csv",
+    "data/manufacturing_actual.csv",
+    "data/inventory_actual.csv",
+    "data/customer_item_profit.csv",
+    "data/bom.csv",
+    "data/component_supply.csv"
+  ],
+  "business_limitations": [
+    "All figures and names synthetic",
+    "Variable contribution is not operating profit",
+    "No firm November order coverage provided",
+    "No independent material alternatives, line capacity and quality data",
+    "Material quote is uncommitted",
+    "Customer shipment cutoff and available stock cannot be disambiguated"
+  ]
+}

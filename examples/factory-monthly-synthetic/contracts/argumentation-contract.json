@@ -1,0 +1,300 @@
+{
+  "schema_version": "1.0.0",
+  "audience": "東浜精機・第2工場（架空）の工場長、営業、生産管理、調達、経理",
+  "governing_question": "10月の限界利益未達と11月の共通IC不足に対し、どの調達・生産・顧客対応を決めるべきか？",
+  "current_answer": "生産数量は計画を達成したが、限界利益は計画比81.3%にとどまった。11月の不足ICは受注残が見込に含まれるかで540個または975個となる条件付き試算であり、調達数量は未確定。まず受注残・完成品の出荷可否・納期を照合し、その後に追加調達・現有IC配分・顧客納期調整を比較して決める。",
+  "confidence": "medium",
+  "evidence": [
+    {
+      "id": "E1",
+      "source": "original synthetic customer_item_profit.csv and sales_plan_actual_forecast.csv",
+      "summary": "Plan contribution 40.80, actual 33.18 million JPY; plan revenue 169.01, actual 145.31"
+    },
+    {
+      "id": "E2",
+      "source": "original synthetic manufacturing_actual.csv",
+      "summary": "Actual good production 3,790 vs plan 3,720; AX and DX under plan, BX and CX above"
+    },
+    {
+      "id": "E3",
+      "source": "original synthetic inventory_actual.csv and sales_plan_actual_forecast.csv",
+      "summary": "CX FG 600, November forecast 330, December forecast 280; CX FG value 28.2 of total 44.67"
+    },
+    {
+      "id": "E4",
+      "source": "original synthetic sales_plan_actual_forecast.csv",
+      "summary": "Unshipped/overdue confirmed orders AX150, DX45; source does not specify incorporation into November forecast or availability of closing FG"
+    },
+    {
+      "id": "E5",
+      "source": "original synthetic bom.csv and component_supply.csv, cross-period readiness audit",
+      "summary": "Available IC-7 3,000; 3,540 needed if backlog included, 3,975 if backlog additional; respective shortages 540 and 975"
+    },
+    {
+      "id": "E6",
+      "source": "original synthetic customer_item_profit.csv and component_supply.csv",
+      "summary": "AX Hokuto contribution JPY12k/unit; hypothetical 270 unit shortfall; quoted expedite fee JPY1.5k per IC on up to 540 units, ETA and quality unconfirmed"
+    },
+    {
+      "id": "E7",
+      "source": "original synthetic customer_item_profit.csv",
+      "summary": "BX Toa price JPY23k/unit, variable cost JPY25k/unit, shipped 800, contribution -JPY1.60m"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "10月限界利益は計画比81.3%、計画差▲7.62百万円",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C2",
+      "text": "生産数量は計画を上回ったが、品目別の生産は計画と異なる",
+      "kind": "fact",
+      "evidence_ids": [
+        "E2"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C3",
+      "text": "CX在庫600個に対して11〜12月販売見込は610個で、適正在庫を基準なしに断定できない",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E3"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C4",
+      "text": "未出荷受注195個の翌月見込への含有関係は未確認",
+      "kind": "fact",
+      "evidence_ids": [
+        "E4"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C5",
+      "text": "共通IC-7不足は540個または975個の条件付き計算であり、数量の確定には受注残の照合が必要",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E4",
+        "E5"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C6",
+      "text": "追加540個が予定どおり使用できれば限界利益の改善は2.43百万円の試算",
+      "kind": "hypothesis",
+      "evidence_ids": [
+        "E5",
+        "E6"
+      ],
+      "causal_basis": "hypothesis",
+      "qualification": "Only for 540 unit case, full demand fulfillment and known fee; buyer order, delivery date and quality unconfirmed",
+      "prominence": "key"
+    },
+    {
+      "id": "C7",
+      "text": "BX×東亜機器は1個あたりの限界利益が▲2千円",
+      "kind": "fact",
+      "evidence_ids": [
+        "E7"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C8",
+      "text": "追加調達前に受注残・在庫引当・顧客納期・調達確約を確認する",
+      "kind": "recommendation",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E5",
+        "E6"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q0",
+      "governing": true,
+      "text": "11月の生産・調達をどう判断すべきか？",
+      "status": "conditional",
+      "answer": "受注残と11月見込の関係を照合し、その結果に応じた不足数を再計算。顧客納期と部品納期が合う場合に限り追加調達を検討する。",
+      "supporting_claim_ids": [
+        "C1",
+        "C4",
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "limitation": "Prior-month backlog forecast membership, FG eligibility and supplier delivery feasibility are unresolved"
+    },
+    {
+      "id": "Q1",
+      "text": "完成品在庫は過剰か？",
+      "status": "conditional",
+      "answer": "CX在庫600個は2か月の販売見込610個とほぼ同量であり、この指標だけで過剰とはいえない。",
+      "supporting_claim_ids": [
+        "C3"
+      ],
+      "limitation": "No approved stocking target, replenishment lead-time or quality allocation available"
+    },
+    {
+      "id": "Q2",
+      "text": "限界利益の悪化はどの品目に集中しているか？",
+      "status": "answered",
+      "answer": "AXとCXの計画差計▲5.46百万円が全体未達▲7.62百万円の約72%を占める。",
+      "supporting_claim_ids": [
+        "C1",
+        "C2"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "10月受注残は11月販売見込に含まれる",
+      "supporting_evidence_ids": [
+        "E5"
+      ],
+      "counter_evidence_ids": [
+        "E4"
+      ],
+      "falsifier": "営業の受注台帳で11月見込が10月受注残を除く新規需要のみと確認される",
+      "confidence": "undetermined"
+    },
+    {
+      "id": "H2",
+      "text": "10月受注残は11月販売見込とは別に繰り越す",
+      "supporting_evidence_ids": [
+        "E5"
+      ],
+      "counter_evidence_ids": [
+        "E4"
+      ],
+      "falsifier": "顧客SKUごとの11月見込明細で受注残を包含することが確認される",
+      "confidence": "undetermined"
+    },
+    {
+      "id": "H3",
+      "text": "AX・DX未出荷の原因は生産不足だけではなく在庫引当・品質・出荷締切も関係する",
+      "supporting_evidence_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "counter_evidence_ids": [],
+      "falsifier": "顧客注文と出荷可能在庫・製造指図の照合で生産能力以外の要因が否定される",
+      "confidence": "low"
+    }
+  ],
+  "decision": {
+    "question": "共通IC-7不足への対応は、追加調達・現有在庫配分・顧客納期調整のどれを選ぶべきか？",
+    "working_assessment": "調達数量をただちに承認するのではなく、見込の受注残含有、完成品の出荷可否と部品納入確約を確認する。540個不足が確定した場合、追加調達は条件付きの有力候補。",
+    "options": [
+      {
+        "name": "追加調達",
+        "merit": "見積540個が納期内に入れば試算上の限界利益を2.43百万円改善",
+        "tradeoff": "納期・品質が未確約で、975個ケースの見積・利益影響は未計算"
+      },
+      {
+        "name": "現有ICを顧客・品目別に配分",
+        "merit": "追加調達費用を抑えられる",
+        "tradeoff": "利益優先配分ではAX北斗270個の出荷が不足し、契約違反・顧客関係悪化があり得る"
+      },
+      {
+        "name": "顧客と納期を調整",
+        "merit": "供給制約と顧客納期の不一致を明示的に解消できる可能性",
+        "tradeoff": "顧客同意が必要で、売上・限界利益への影響は未計算"
+      }
+    ],
+    "reversal_conditions": [
+      "11月見込に10月未出荷195個が含まれていないと判明",
+      "完成品の一部が品質保留・引当済みと判明",
+      "IC-7調達が顧客納期に間に合わない",
+      "契約上の優先供給義務や遅延ペナルティを確認"
+    ]
+  },
+  "slides": [
+    {
+      "id": "S02",
+      "claim_ids": [
+        "C1",
+        "C2"
+      ],
+      "purpose": "Executive relevance"
+    },
+    {
+      "id": "S03",
+      "claim_ids": [
+        "C1"
+      ],
+      "purpose": "Profit driver decomposition"
+    },
+    {
+      "id": "S04",
+      "claim_ids": [
+        "C2"
+      ],
+      "purpose": "Manufacturing mix"
+    },
+    {
+      "id": "S05",
+      "claim_ids": [
+        "C3"
+      ],
+      "purpose": "Inventory adequacy"
+    },
+    {
+      "id": "S06",
+      "claim_ids": [
+        "C4"
+      ],
+      "purpose": "Backlog uncertainty"
+    },
+    {
+      "id": "S07",
+      "claim_ids": [
+        "C5"
+      ],
+      "purpose": "Cross-period material demand"
+    },
+    {
+      "id": "S09",
+      "claim_ids": [
+        "C6"
+      ],
+      "purpose": "Expedite economics conditional"
+    },
+    {
+      "id": "S10",
+      "claim_ids": [
+        "C7"
+      ],
+      "purpose": "Negative contribution"
+    },
+    {
+      "id": "S11",
+      "claim_ids": [
+        "C8"
+      ],
+      "purpose": "Decision alternatives"
+    }
+  ]
+}

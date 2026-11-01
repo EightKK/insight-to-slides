@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0.0",
+  "audience": "Business and investment research readers assessing Sandvik financial performance",
+  "governing_question": "Sandvikの2026年第3四半期に見られる高い成長と収益性は、どこまで持続可能か？",
+  "current_answer": "Miningの補修需要に裏付けがあり、Machiningにも実需の改善は認められる。ただしMachiningの受注成長は価格要因が大きいため、当期の成長率・利益率をそのまま将来へ延ばすことは避けるべきだ。",
+  "confidence": "medium",
+  "evidence": [
+    {
+      "id": "E1",
+      "source": "Sandvik Interim Report Q3 2026, p.1",
+      "summary": "Revenue +29%, organic revenue +25%, adjusted EBITA margin 22.5%"
+    },
+    {
+      "id": "E2",
+      "source": "Sandvik Q3 2026 earnings call, management presentation",
+      "summary": "Cutting-tool organic orders +19%: volume approximately +5pp, prebuys approximately +2pp, remaining primarily price"
+    },
+    {
+      "id": "E3",
+      "source": "Sandvik Interim Report Q3 2026, p.8",
+      "summary": "Machining margin 25.7%; tungsten timing effect +0.7 percentage points; savings SEK 82m"
+    },
+    {
+      "id": "E4",
+      "source": "Sandvik Interim Report Q3 2026, p.6",
+      "summary": "Mining aftermarket organic order growth +16%; adjusted EBITA margin 21.8%"
+    },
+    {
+      "id": "E5",
+      "source": "Sandvik Interim Report Q3 2026, pp.1,4",
+      "summary": "Group adjusted SG&A costs 6,283 to 6,930 MSEK; ratio 21.5% to 18.4%"
+    },
+    {
+      "id": "E6",
+      "source": "Sandvik Q3 2026 earnings call, CEO Q&A",
+      "summary": "Management links aftermarket demand to utilization, fleet aging and advanced equipment"
+    },
+    {
+      "id": "E7",
+      "source": "Sandvik Interim Report Q3 2026, p.1",
+      "summary": "Q3 free operating cash flow increased 28%, YTD decreased 1%"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "全体の成長・収益性は好調",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C2",
+      "text": "切削工具の受注成長の主要部分は価格要因で、数量成長とは同義でない",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E2"
+      ],
+      "causal_basis": "management_explanation",
+      "qualification": "Management's approximate, not independently audited, decomposition",
+      "prominence": "key"
+    },
+    {
+      "id": "C3",
+      "text": "Machiningの25.7%利益率は識別可能な一時効果0.7ptを含むが、それだけでは基調水準を決められない",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E3"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    },
+    {
+      "id": "C4",
+      "text": "Miningのアフターマーケット需要には実需の支えがある",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E4",
+        "E6"
+      ],
+      "causal_basis": "management_explanation",
+      "qualification": "Management's account of demand drivers; durability is conditional",
+      "prominence": "key"
+    },
+    {
+      "id": "C5",
+      "text": "販管費率低下は費用実額の削減ではない",
+      "kind": "fact",
+      "evidence_ids": [
+        "E5"
+      ],
+      "causal_basis": "not_causal"
+    },
+    {
+      "id": "C6",
+      "text": "四半期CFの強さを年初来全体の強さに一般化しない",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E7"
+      ],
+      "causal_basis": "not_causal"
+    },
+    {
+      "id": "C7",
+      "text": "利益評価はMachiningに対して保守的な感応度検証を併用するのが合理的",
+      "kind": "recommendation",
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "causal_basis": "not_causal",
+      "prominence": "key"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q0",
+      "text": "高い成長と収益性は持続可能か？",
+      "governing": true,
+      "status": "conditional",
+      "answer": "Mining補修需要は相対的に説明可能で、Machiningは数量回復もあるが価格依存が大きい。成長力の一括評価は避ける。",
+      "supporting_claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C7"
+      ],
+      "limitation": "Future price and volume behavior is not disclosed precisely"
+    },
+    {
+      "id": "Q1",
+      "text": "Machiningの受注高+19%は数量拡大か？",
+      "status": "answered",
+      "answer": "切削工具では数量約5pt、前倒し約2pt、残りは主に価格と会社が説明。",
+      "supporting_claim_ids": [
+        "C2"
+      ]
+    },
+    {
+      "id": "Q2",
+      "text": "25.7%利益率は実力値か？",
+      "status": "conditional",
+      "answer": "識別された0.7ptだけを控除しても、他の価格・ミックス・生産性要因が残る。",
+      "supporting_claim_ids": [
+        "C3"
+      ],
+      "limitation": "No fully normalized margin bridge disclosed"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "構造的な収益力改善が主因",
+      "supporting_evidence_ids": [
+        "E4",
+        "E6"
+      ],
+      "counter_evidence_ids": [
+        "E2",
+        "E3"
+      ],
+      "falsifier": "切削工具の数量回復が失速し、価格効果剥落後の利益率が継続的に下がる",
+      "confidence": "low"
+    },
+    {
+      "id": "H2",
+      "text": "価格・前倒しなど一時的な効果が主因",
+      "supporting_evidence_ids": [
+        "E2",
+        "E3"
+      ],
+      "counter_evidence_ids": [
+        "E4",
+        "E6"
+      ],
+      "falsifier": "数量成長とMining補修受注が続き、価格正常化後も高い利益率が残る",
+      "confidence": "medium"
+    },
+    {
+      "id": "H3",
+      "text": "実需改善と価格効果が混在",
+      "supporting_evidence_ids": [
+        "E2",
+        "E3",
+        "E4",
+        "E6"
+      ],
+      "counter_evidence_ids": [
+        "E7"
+      ],
+      "falsifier": "価格正常化後に利益率と数量が同時に大幅低下する",
+      "confidence": "medium"
+    }
+  ],
+  "decision": {
+    "question": "Machiningの高い2026年Q3利益率を、将来の収益力を評価する基準に採用してよいか？",
+    "working_assessment": "現時点では混合仮説を採用し、利益率25.7%を無条件に継続値とみなさず感応度で評価する。",
+    "options": [
+      {
+        "name": "現状利益率をベースに評価",
+        "merit": "価格転嫁・需要の強さを過度に過小評価しない",
+        "tradeoff": "資源価格と前倒し需要の反動を過小評価する可能性"
+      },
+      {
+        "name": "利益率の低下ケースを併せて検証",
+        "merit": "利益の一時的押し上げへの依存を見える化できる",
+        "tradeoff": "数量回復・構造的効率改善を過小評価する可能性"
+      }
+    ],
+    "reversal_conditions": [
+      "切削工具の数量成長の継続性と、価格正常化後の受注変化",
+      "Machiningの調整後EBITA利益率とタングステンの一時効果開示",
+      "Miningのアフターマーケット受注成長の持続性"
+    ]
+  },
+  "slides": [
+    {
+      "id": "S02",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "purpose": "Conclusion"
+    },
+    {
+      "id": "S04",
+      "claim_ids": [
+        "C2"
+      ],
+      "purpose": "Price volume decomposition"
+    },
+    {
+      "id": "S05",
+      "claim_ids": [
+        "C3"
+      ],
+      "purpose": "Profit quality"
+    },
+    {
+      "id": "S06",
+      "claim_ids": [
+        "C4"
+      ],
+      "purpose": "Mining demand"
+    },
+    {
+      "id": "S08",
+      "claim_ids": [
+        "C5"
+      ],
+      "purpose": "Group leverage"
+    },
+    {
+      "id": "S09",
+      "claim_ids": [
+        "C6"
+      ],
+      "purpose": "Cash flow"
+    },
+    {
+      "id": "S11",
+      "claim_ids": [
+        "C7"
+      ],
+      "purpose": "Decision and reversal triggers"
+    }
+  ]
+}

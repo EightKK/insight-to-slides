@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "research",
+  "question": "Is Toyota FY2027 Q1 operating margin weakness temporary or structural, and which leading indicators merit monitoring?",
+  "as_of": "2026-11-01",
+  "max_retrievals": 18,
+  "gaps": [
+    {
+      "id": "G01",
+      "claim": "What drove operating profit YoY change?",
+      "decision_impact": 5,
+      "retrieval_cost": 1,
+      "preferred_sources": [
+        "Toyota financial slide"
+      ],
+      "falsifier": "Bridge fails to reconcile",
+      "required_evidence_ids": [
+        "E03",
+        "E04",
+        "E09"
+      ],
+      "resolution": "covered"
+    },
+    {
+      "id": "G02",
+      "claim": "Why did attributable profit rise while operating income fell?",
+      "decision_impact": 5,
+      "retrieval_cost": 1,
+      "preferred_sources": [
+        "Toyota Q&A"
+      ],
+      "falsifier": "Other-income composition does not contain notable special gains",
+      "required_evidence_ids": [
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "resolution": "covered"
+    },
+    {
+      "id": "G03",
+      "claim": "Are vehicle volumes and electrification mix rising together?",
+      "decision_impact": 4,
+      "retrieval_cost": 1,
+      "preferred_sources": [
+        "Toyota sales breakdown"
+      ],
+      "falsifier": "HEV units declined or total retail sales grew",
+      "required_evidence_ids": [
+        "E11",
+        "E12",
+        "E13",
+        "E14"
+      ],
+      "resolution": "covered"
+    },
+    {
+      "id": "G04",
+      "claim": "Are input-cost pressures specific to Toyota?",
+      "decision_impact": 4,
+      "retrieval_cost": 2,
+      "preferred_sources": [
+        "Toyota Q&A",
+        "Subaru primary release",
+        "Honda segment release"
+      ],
+      "falsifier": "Peer results show no pressure and Toyota lacks cost evidence",
+      "required_evidence_ids": [
+        "E17",
+        "E18",
+        "E19",
+        "E20"
+      ],
+      "resolution": "covered"
+    },
+    {
+      "id": "G05",
+      "claim": "What is exact Q1 US tariff and refund contribution?",
+      "decision_impact": 5,
+      "retrieval_cost": 4,
+      "preferred_sources": [
+        "Toyota Q&A"
+      ],
+      "falsifier": "Issuer released an exact net Q1 figure",
+      "required_evidence_ids": [
+        "Q1_TARIFF_EXACT"
+      ],
+      "resolution": "unavailable",
+      "limitation": "Toyota explicitly declines to disclose Q1 tariff amount; FY forecast is not Q1 actual."
+    },
+    {
+      "id": "G06",
+      "claim": "What is exact one-off cost from BEV project reassessment?",
+      "decision_impact": 4,
+      "retrieval_cost": 4,
+      "preferred_sources": [
+        "Toyota Q&A"
+      ],
+      "falsifier": "One-off component disclosed separately",
+      "required_evidence_ids": [
+        "BEV_PROJECT_EXACT"
+      ],
+      "resolution": "unavailable",
+      "limitation": "Issuer declines to disclose individual amount; do not infer it from expense residual."
+    },
+    {
+      "id": "G07",
+      "claim": "Can unit selling price and mix impacts be separated from FX and consolidation effects?",
+      "decision_impact": 4,
+      "retrieval_cost": 4,
+      "preferred_sources": [
+        "Toyota segment filings and transaction disclosures"
+      ],
+      "falsifier": "Reconciled like-for-like automotive revenue and unit volume bridge available",
+      "required_evidence_ids": [
+        "LIKE_FOR_LIKE_PRICE_MIX"
+      ],
+      "resolution": "unavailable",
+      "limitation": "Consolidated revenue includes different businesses; comparator consolidates Hino vehicles. Naive revenue/unit is invalid."
+    },
+    {
+      "id": "G08",
+      "claim": "Is Q2 already reported and does it validate the thesis?",
+      "decision_impact": 4,
+      "retrieval_cost": 1,
+      "preferred_sources": [
+        "Toyota official IR calendar"
+      ],
+      "falsifier": "Q2 report published before 2026-11-01",
+      "required_evidence_ids": [
+        "Q2_ACTUAL"
+      ],
+      "resolution": "excluded",
+      "limitation": "Toyota Q2 announcement scheduled for Nov 5, 2026; unavailable at the analysis cut-off."
+    },
+    {
+      "id": "G09",
+      "claim": "Are FY2027 earnings targets supported by revised assumptions?",
+      "decision_impact": 4,
+      "retrieval_cost": 1,
+      "preferred_sources": [
+        "Toyota outlook deck",
+        "Toyota Q&A"
+      ],
+      "falsifier": "Forecast revision not reconciled or yen assumption unchanged",
+      "required_evidence_ids": [
+        "E21",
+        "E22",
+        "E17",
+        "E25"
+      ],
+      "resolution": "covered"
+    }
+  ]
+}

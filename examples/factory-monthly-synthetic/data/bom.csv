@@ -1,0 +1,9 @@
+﻿parent_sku,component,component_name,qty_per_good
+AX-100,IC-7,電力制御IC,2
+AX-100,CAS-A,筐体A,1
+BX-200,CAS-B,筐体B,1
+BX-200,PCB-B,汎用基板,1
+CX-300,IC-7,電力制御IC,1
+CX-300,PCB-C,制御基板,1
+DX-400,IC-7,電力制御IC,3
+DX-400,CAS-D,筐体D,1

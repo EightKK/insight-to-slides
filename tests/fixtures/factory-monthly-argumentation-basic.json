@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0.0",
+  "audience": "Plant manager, production planner, sales, procurement, quality and finance",
+  "governing_question": "販売計画と確定受注、品目別製造実績・在庫・限界利益・共通部品制約を踏まえ、翌月の生産と供給をどう優先すべきか",
+  "current_answer": "工場全体の生産達成率は高いが需要と品目構成が合っていない。CXの製造を抑え、AX/DXの供給優先度を高め、共通IC-7の追加確保を条件付きで判断する。同時にBX×東亜の赤字取引条件を見直す。",
+  "confidence": "medium",
+  "evidence": [
+    {
+      "id": "E1",
+      "source": "sales_plan_actual_forecast.csv",
+      "summary": "Oct sales plan 169.01, actual 145.31, backlog AX/DX 195; Nov sales forecast 151.21"
+    },
+    {
+      "id": "E2",
+      "source": "manufacturing_actual.csv",
+      "summary": "Oct good output planned 3720, actual 3790; mix favoring BX/CX over AX/DX"
+    },
+    {
+      "id": "E3",
+      "source": "inventory_actual.csv",
+      "summary": "Finished goods book value 33.15 to 44.67; CX closing 600 units and 28.20 mJPY"
+    },
+    {
+      "id": "E4",
+      "source": "customer_item_profit.csv",
+      "summary": "Customer-SKU contribution totals 33.18; BX-Toua 800 units with -1.60 mJPY"
+    },
+    {
+      "id": "E5",
+      "source": "bom.csv",
+      "summary": "AX needs 2 IC-7 and DX needs 3 IC-7; 3540 net units for November"
+    },
+    {
+      "id": "E6",
+      "source": "component_supply.csv",
+      "summary": "IC-7 usable 3000 after reserve; estimated 540 expedited quote has no delivery confirmation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "工場全体の生産数量は計画超過だが、売上は計画未達",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ],
+      "causal_basis": "not_causal"
+    },
+    {
+      "id": "C2",
+      "text": "CXは販売計画下振れと生産継続により完成品在庫が増えた",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "causal_basis": "independently_tested",
+      "qualification": "CX forecast misses and production vs shipments confirm FG accumulation; root cause of forecasting error not determined"
+    },
+    {
+      "id": "C3",
+      "text": "AX/DXの生産計画未達と確定受注未出荷が併存している",
+      "kind": "fact",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "causal_basis": "not_causal",
+      "qualification": "FG remains on the books, so the reason for unshipped orders is not settled"
+    },
+    {
+      "id": "C4",
+      "text": "BX×東亜は売上を計上したが変動費基準で採算がマイナス",
+      "kind": "fact",
+      "evidence_ids": [
+        "E4"
+      ],
+      "causal_basis": "not_causal"
+    },
+    {
+      "id": "C5",
+      "text": "11月のA/D生産を満たすにはIC-7が540個不足する条件付き試算",
+      "kind": "interpretation",
+      "evidence_ids": [
+        "E1",
+        "E3",
+        "E5",
+        "E6"
+      ],
+      "causal_basis": "independently_tested",
+      "qualification": "Forecast and available FG, non-IC constraints assumed"
+    },
+    {
+      "id": "C6",
+      "text": "追加調達は契約・品質・能力条件を確認後に限定実行する",
+      "kind": "recommendation",
+      "evidence_ids": [
+        "E4",
+        "E5",
+        "E6"
+      ],
+      "causal_basis": "hypothesis",
+      "qualification": "Full forecast and deliveries conditional"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "販売計画と確定受注、品目別製造実績・在庫・限界利益・共通部品制約を踏まえ、翌月の生産と供給をどう優先すべきか",
+      "status": "conditional",
+      "answer": "工場全体の生産達成率は高いが需要と品目構成が合っていない。CXの製造を抑え、AX/DXの供給優先度を高め、共通IC-7の追加確保を条件付きで判断する。同時にBX×東亜の赤字取引条件を見直す。",
+      "supporting_claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "limitation": "Supplier confirmation, quality, customer allocations and line capacities are not provided",
+      "governing": true
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "Demand/product-mix mismatch is the main explanation for production and sales performance divergence",
+      "supporting_evidence_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "counter_evidence_ids": [],
+      "falsifier": "If firm order/FG allocation data show no overproduction and no true mismatch, revise the cause",
+      "confidence": "medium"
+    },
+    {
+      "id": "H2",
+      "text": "Shipment timing or inventory holds, not output volume alone, caused AX/DX overdue orders",
+      "supporting_evidence_ids": [
+        "E1",
+        "E3"
+      ],
+      "counter_evidence_ids": [
+        "E2"
+      ],
+      "falsifier": "If all overdue units were truly unavailable by month end and output was sole constraint, reject the timing/hold hypothesis",
+      "confidence": "undetermined"
+    }
+  ],
+  "decision": {
+    "question": "11月の共通ICと製造能力をどの顧客・品目に配分し、赤字取引と滞留在庫をどう扱うか",
+    "working_assessment": "Conditionally expedite IC-7; prioritize AX/DX based on customer commitments and contribution; pause CX until FG demand/availability verified; address negative-margin BX-Toua.",
+    "options": [
+      {
+        "name": "Do not expedite",
+        "merit": "No new procurement premium",
+        "tradeoff": "AX Hokuto service loss and modeled 3.24 mJPY foregone contribution"
+      },
+      {
+        "name": "Expedite IC 540 units",
+        "merit": "Up to 2.43 mJPY incremental modeled contribution net of fee",
+        "tradeoff": "Unconfirmed delivery, quality, actual firm demand, and other capacity bottlenecks"
+      }
+    ],
+    "reversal_conditions": [
+      "Expedite delivery or QA cannot be confirmed",
+      "Fewer than 68 additional AX Hokuto units can be sold at assumed price/cost",
+      "Factory capacity or alternative material constraints invalidate the BOM-only case",
+      "FG inventory is not available as assumed"
+    ]
+  }
+}

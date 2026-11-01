@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/insight-to-slides/communication-brief.schema.json",
+  "title": "Communication Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "document",
+    "evidence",
+    "slides"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "audience",
+        "intent",
+        "primary_question",
+        "medium"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intent": {
+          "enum": [
+            "inform",
+            "align",
+            "decide",
+            "explore"
+          ]
+        },
+        "primary_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "medium": {
+          "enum": [
+            "projection",
+            "handout",
+            "async",
+            "dashboard",
+            "document"
+          ]
+        },
+        "decision_owner": {
+          "type": "string"
+        },
+        "key_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "output_language": {
+          "type": "string",
+          "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$",
+          "default": "ja",
+          "description": "BCP-47-style language tag for audience-facing output. Defaults to Japanese (ja) when omitted. Explicit user preferences override the default."
+        },
+        "cover": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Neutral physical title page for a conventional multi-slide deck; generated before the content slides. Do not place the governing claim here.",
+          "required": [
+            "title"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "reporting_period": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            },
+            "source_or_publication_date": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/slide"
+      }
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "statement",
+        "kind",
+        "source",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "source_fact",
+            "calculation",
+            "assumption",
+            "hypothesis"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "formula": {
+          "type": "string"
+        },
+        "input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ]
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "slide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "headline",
+        "claim_type",
+        "takeaway",
+        "evidence_refs",
+        "visual",
+        "audit_tokens"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+        },
+        "role": {
+          "enum": [
+            "finding",
+            "context",
+            "comparison",
+            "decision",
+            "hypothesis",
+            "recommendation",
+            "summary",
+            "reference",
+            "appendix"
+          ]
+        },
+        "headline": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_type": {
+          "enum": [
+            "fact",
+            "interpretation",
+            "hypothesis",
+            "recommendation"
+          ]
+        },
+        "takeaway": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "counterpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "visual": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pattern",
+            "visual_focus",
+            "design_notes",
+            "pattern_id"
+          ],
+          "properties": {
+            "pattern": {
+              "type": "string",
+              "minLength": 1
+            },
+            "visual_focus": {
+              "type": "string",
+              "minLength": 1
+            },
+            "design_notes": {
+              "type": "string",
+              "minLength": 1
+            },
+            "avoid": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pattern_id": {
+              "type": "string",
+              "enum": [
+                "contrast_kpi",
+                "variance_waterfall",
+                "cash_flow_bridge",
+                "trend_small_multiples",
+                "slope_before_after",
+                "ranked_comparison",
+                "composition_bar",
+                "distribution_range",
+                "hypothesis_evidence_matrix",
+                "decision_option_matrix",
+                "process_linkage",
+                "uncertainty_band",
+                "evidence_ladder",
+                "timeline_milestones",
+                "reported_vs_constant_currency",
+                "mix_margin_gap",
+                "regional_contribution",
+                "guidance_revision",
+                "quarterly_divergence",
+                "margin_dilution",
+                "volume_sales_divergence",
+                "profit_driver_waterfall",
+                "segment_profit_divergence",
+                "profit_tier_divergence",
+                "outlook_fact_separation",
+                "process_capacity_queue",
+                "wip_stock_flow_bridge",
+                "queue_age_distribution",
+                "service_feasibility_scenarios",
+                "cause_intervention_gate",
+                "contribution_plan_actual_bridge",
+                "conditional_bom_cases",
+                "inventory_demand_cover"
+              ],
+              "description": "Identifier in patterns/catalog.json (validate_brief.py also checks the catalog at runtime)."
+            },
+            "expected_reading_order": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Reader progression (labels or evidence IDs), in presentation language."
+            }
+          }
+        },
+        "discussion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "question",
+            "options"
+          ],
+          "properties": {
+            "question": {
+              "type": "string",
+              "minLength": 1
+            },
+            "options": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "next_action": {
+              "type": "string"
+            },
+            "missing_information": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "audit_tokens": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Key visible factual labels expected in the final render; used by deterministic content audit."
+        },
+        "reference_content_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "sources",
+              "definitions",
+              "scope",
+              "caveats",
+              "forecast",
+              "comparison",
+              "supporting_details"
+            ]
+          },
+          "description": "Optional content classification for supporting slides. Source-only -> 出典; source plus notes -> 出典・注記; extended analyses -> 付録. Explicit non-Japanese output overrides titles."
+        }
+      }
+    }
+  },
+  "description": "Machine-readable brief. English field names; audience-facing natural-language values default to Japanese unless the user explicitly specifies another output language."
+}

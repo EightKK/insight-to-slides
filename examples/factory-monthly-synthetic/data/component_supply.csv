@@ -1,0 +1,7 @@
+﻿period,component,onhand_start_units,next1_confirmed_receipt_units,reserve_units,next1_usable_units,expedite_qty_option_units,expedite_fee_per_unit_kJPY,expedite_delivery_status
+2026-10,IC-7,2800,400,200,3000,540,1.5,見積のみ・納期/品質は未確約
+2026-10,CAS-A,1500,0,100,1400,0,0,不要
+2026-10,CAS-B,1000,0,0,1000,0,0,不要
+2026-10,CAS-D,500,0,50,450,0,0,不要
+2026-10,PCB-B,1200,0,100,1100,0,0,不要
+2026-10,PCB-C,300,0,0,300,0,0,不要

@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "observation_scope": "industry_aggregate",
+  "published_scope_label": "カナダ製造業（産業全体の集計値）",
+  "sources": [
+    {"id": "S1", "title": "Statistics Canada, Monthly Survey of Manufacturing", "url": "https://www.statcan.gc.ca/", "reference_period": "2026-08"}
+  ],
+  "disclosures": {"bom": "unavailable", "customer_item_profit": "unavailable"},
+  "claims": [
+    {"id": "C1", "text": "製造業売上高は前月比で減少", "type": "observed", "scope": "industry_aggregate", "source_url": "https://www.statcan.gc.ca/", "represented_as": "confirmed_actual"},
+    {"id": "C2", "text": "新規受注は先行指標として弱含み", "type": "advance", "scope": "industry_aggregate", "source_url": "https://www.statcan.gc.ca/", "represented_as": "leading_indicator"},
+    {"id": "C3", "text": "架空の工場単位への影響は説明用シナリオ", "type": "scenario", "scope": "plant", "represented_as": "illustrative"}
+  ]
+}
